@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"></script>
-    <title>Home</title>
+    <title>Item Registration</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg nav_ground">
@@ -72,6 +72,41 @@
         </div>
     </div>
 </nav>
+<div class="container form-container-style">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1 class="form-title">Item Registration</h1><br><br>
+            <form method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <input type="text"  class = "form-cus" id="i_name" placeholder="Item Name" name="i_name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text"  class = "form-cus" id="creator" placeholder="Creator" name="creator" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text"  class = "form-cus" id="year" placeholder="Year Created" name="year" required>
+                </div>
+                <div class="mb-3">
+                    <label for="photo" class="form-label">Image of Antique</label>
+                    <input class="form-cus" type="file" name="photo" id="photo">
+                </div>
+                <div class="mb-3">
+                    <label for="certificate" class="form-label">Certificate of Authenticity</label>
+                    <input class="form-cus" type="file" name="certificate" id="certificate">
+                </div>
+                <div class="mb-3">
+                    <textarea type="text"  class = "form-cus textarea-size" id="description" placeholder="Description" name="description" required></textarea>
+                </div>
+                <div class = "row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 text-center"><button type="submit" class="btn-submit btn-submit-color">Submit</button></div>
+                    <div class="col-md-4"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <footer class="footer">
     <div class="container first-footer">
         <div class="row">
@@ -124,21 +159,21 @@
                         </div>
                         <div class="col-md-5 col-lg-4 ml-lg-0 text-end s-media-btn">
                             <a
-                                    class="btn btn-outline-light m-1"
-                                    class="text-white"
-                                    role="button"
+                                class="btn btn-outline-light m-1"
+                                class="text-white"
+                                role="button"
                             ><i class="bi bi-facebook"></i
                             ></a>
                             <a
-                                    class="btn btn-outline-light m-1"
-                                    class="text-white"
-                                    role="button"
+                                class="btn btn-outline-light m-1"
+                                class="text-white"
+                                role="button"
                             ><i class="bi bi-twitter-x"></i
                             ></a>
                             <a
-                                    class="btn btn-outline-light m-1"
-                                    class="text-white"
-                                    role="button"
+                                class="btn btn-outline-light m-1"
+                                class="text-white"
+                                role="button"
                             ><i class="bi bi-instagram"></i
                             ></a>
                         </div>
