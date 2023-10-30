@@ -11,7 +11,7 @@
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!">Settings</a></li>
                     <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                    <li><hr class="dropdown-divider" /></li>
+                    <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#!">Logout</a></li>
                 </ul>
             </li>
@@ -94,7 +94,7 @@
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
-    
+
                 </div>
             </main>
             <footer class="py-4 bg-cus-footer mt-auto">
@@ -111,6 +111,5 @@
             </footer>
         </div>
     </div>
-    <script src="scripts.js"></script>
     </body>
 @endsection

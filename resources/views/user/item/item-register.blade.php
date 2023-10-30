@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-    <nav class="navbar navbar-expand-lg nav_ground">
+    <nav class="navbar navbar-expand-xxl nav_ground">
         <div class="container">
             <a class="cus-brand" href="#">Timeless Treasuria.</a>
             <button class="cus-toggler cus-toggle-border" type="button" data-bs-toggle="offcanvas"
@@ -15,15 +15,15 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav flex-grow-1 pe-3">
-                        <li class="nav-item">
+                        <li class="nav-item nav-space">
                             <a class="cus-link l_active" aria-current="page" href="#">HOME</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item nav-space">
                             <a class="cus-link" href="#">
                                 ABOUT
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown nav-space">
                             <a class="cus-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 AUCTION
@@ -37,23 +37,141 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item nav-space-searchbar">
                             <a class="cus-link" href="#">CONTACT</a>
                         </li>
-                    </ul>
-                    <form class="d-flex pad_for_s_bar" role="search">
-                        <div class="input-group mb-3">
-                            <input class="form-control bg-search-bar" type="search" aria-label="Search"
-                                aria-describedby="ba2">
-                            <button class="btn btn-search-bar" type="button" id="ba2">
-                                <i class="bi bi-search"></i>
+                        <li class="nav-item nav-space-searchbar">
+                            <form class="d-flex pad_for_s_bar" role="search">
+                                <div class="input-group mb-3">
+                                    <input class="form-control bg-search-bar" type="search" aria-label="Search"
+                                           aria-describedby="ba2">
+                                    <button class="btn btn-search-bar" type="button" id="ba2">
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                        <div class="li-sign-in">
+                            <button type="button" class="btn-cus btn-sign-in" data-bs-toggle="modal" data-bs-target="#SignIn">
+                                Sign In
                             </button>
                         </div>
-                    </form>
+                    </ul>
                 </div>
             </div>
         </div>
     </nav>
+    <div class="modal fade" id="SignIn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content login-form">
+                <div class="modal-header modal-border-removal">
+                    <h1 class="modal-title fs-4 login-title-c">Welcome back!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-border-removal">
+                    <form action="">
+                        <div class="mb-lg-4">
+                            <label for="photo" class="form-label">Username</label>
+                            <div class="input-group mlm">
+                                <span class="input-group-addon">
+                                    <i class="bi bi-person-fill"></i>
+                                </span>
+                                <input type="text" class = "form-control login-inputbox" id="i_name" placeholder="Enter your username" name="name" required>
+                            </div>
+
+                        </div>
+                        <div class="mb-lg-4">
+                            <label for="photo" class="form-label">Password</label>
+                            <div class="input-group mlm">
+                                <span class="input-group-addon">
+                                    <i class="bi bi-lock-fill"></i>
+                                </span>
+                                <input type="text" class = "form-control login-inputbox" id="password" placeholder="Enter your password" name="password" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer modal-border-removal">
+                    <button type="button" class="btn-sign">Sign In</button>
+                    <span>Don't have an account?<button class="blue-link" data-bs-target="#Register" data-bs-toggle="modal">Sign Up</button></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="Register" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header modal-border-removal">
+                    <h1 class="modal-title fs-4 register-title-c">Create an account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-border-removal">
+                    <form action="">
+                        <div class="mb-lg-4">
+                            <div class="input-group mlm">
+                                <span class="input-group-addon">
+                                    <i class="bi bi-person-fill"></i>
+                                </span>
+                                <input type="text" class = "form-control login-inputbox" placeholder="Enter your username" name="username" required>
+                            </div>
+                        </div>
+                        <div class="mb-lg-4">
+                            <div class="input-group mlm">
+                                <span class="input-group-addon">
+                                    <i class="bi bi-envelope-at-fill"></i>
+                                </span>
+                                <input type="email" class = "form-control login-inputbox" placeholder="Enter your email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="mb-lg-4">
+                            <div class="input-group mlm">
+                                <span class="input-group-addon">
+                                    <i class="bi bi-lock-fill"></i>
+                                </span>
+                                <input type="text" class = "form-control login-inputbox" placeholder="Enter your password" name="password" required>
+                            </div>
+                        </div>
+                        <div class="mb-lg-4">
+                            <div class="input-group mlm">
+                                <span class="input-group-addon">
+                                    <i class="bi bi-shield-lock-fill"></i>
+                                </span>
+                                <input type="text" class = "form-control login-inputbox" placeholder="Retype your password to confirm" name="confirm_password" required>
+                            </div>
+                        </div>
+                        <div class="mb-lg-4">
+                            <div class="input-group mlm">
+                                <span class="input-group-addon">
+                                    <i class="bi bi-person-circle"></i>
+                                </span>
+                                <input type="text" class = "form-control login-inputbox" placeholder="Enter your full name" name="full_name" required>
+                            </div>
+                        </div>
+                        <div class="mb-lg-4">
+                            <div class="input-group mlm">
+                                <span class="input-group-addon">
+                                    <i class="bi bi-telephone-fill"></i>
+                                </span>
+                                <input type="text" class = "form-control login-inputbox" placeholder="Enter your phone number" name="phone_number" required>
+                            </div>
+                        </div>
+                        <div class="mb-lg-4">
+                            <div class="input-group mlm">
+                                <span class="input-group-addon">
+                                    <i class="bi bi-house-fill"></i>
+                                </span>
+                                <input type="text" class = "form-control login-inputbox" placeholder="Enter your address" name="address" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer modal-border-removal">
+                    <button type="button" class="btn-sign">Sign Up</button>
+                    <span>Already had an account?<button class="blue-link" data-bs-target="#SignIn" data-bs-toggle="modal">Sign In</button></span>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container form-container-style">
         <div class="row">
             <div class="col-md-1"></div>
@@ -88,7 +206,7 @@
                     <div class = "row">
                         <div class="col-md-4"></div>
                         <div class="col-md-4 text-center"><button type="submit"
-                                class="btn-submit btn-submit-color">Submit</button></div>
+                                class="btn-cus btn-submit btn-submit-color">Submit</button></div>
                         <div class="col-md-4"></div>
                     </div>
                 </form>
@@ -109,7 +227,6 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-
                     <ul>
                         <h4>get support</h4>
                         <li><a href="#">FAQ</a></li>
@@ -119,7 +236,6 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-
                     <ul>
                         <h4>contact</h4>
                         <li><a href="#">Contact us</a></li>
