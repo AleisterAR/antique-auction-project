@@ -21,14 +21,27 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $user  = new User();
-        $user->user_name = 'jhondoe';
-        $user->email = 'jhondoe@gmail.com';
-        $user->full_name = 'jhondoe@gmail.com';
-        $user->address = "address";
-        $user->phone_number = '123456789';
-        $user->password = bcrypt('password');
-        $user->save();
+        $users = [
+            [
+                'user_name' => 'admin',
+                'email' => 'admin@test.com',
+                'full_name' => 'admin',
+                'address' => 'address',
+                'phone_number' => '123456789',
+                'password' =>   bcrypt('password')
+            ],
+            [
+                'user_name' => 'user',
+                'email' => 'user@test.com',
+                'full_name' => 'user',
+                'address' => 'address',
+                'phone_number' => '123456789',
+                'password' =>   bcrypt('password')
+            ]
+        ];
 
+        foreach($users as $user) {
+            User::create($user);
+        }
     }
 }

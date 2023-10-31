@@ -44,7 +44,7 @@
                             <form class="d-flex pad_for_s_bar" role="search">
                                 <div class="input-group mb-3">
                                     <input class="form-control bg-search-bar" type="search" aria-label="Search"
-                                           aria-describedby="ba2">
+                                        aria-describedby="ba2">
                                     <button class="btn btn-search-bar" type="button" id="ba2">
                                         <i class="bi bi-search"></i>
                                     </button>
@@ -52,16 +52,27 @@
                             </form>
                         </li>
                         <div class="li-sign-in">
-                            <button type="button" class="btn-cus btn-sign-in" data-bs-toggle="modal" data-bs-target="#SignIn">
+                            <button type="button" class="btn-cus btn-sign-in" data-bs-toggle="modal"
+                                data-bs-target="#SignIn">
                                 Sign In
                             </button>
+                            {{-- @auth
+                                photo
+                            @endauth
+                            @guest
+                                <button type="button" class="btn-cus btn-sign-in" data-bs-toggle="modal"
+                                data-bs-target="#SignIn">
+                                Sign In
+                                </button>
+                            @endguest --}}
                         </div>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
-    <div class="modal fade" id="SignIn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="SignIn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content login-form">
                 <div class="modal-header modal-border-removal">
@@ -69,36 +80,41 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body modal-border-removal">
-                    <form action="">
+                    <form id="signIn-form">
                         <div class="mb-lg-4">
                             <label for="photo" class="form-label">Username</label>
                             <div class="input-group mlm">
                                 <span class="input-group-addon">
                                     <i class="bi bi-person-fill"></i>
                                 </span>
-                                <input type="text" class = "form-control login-inputbox" id="i_name" placeholder="Enter your username" name="name" required>
+                                <input type="text" name="email" class = "form-control login-inputbox" id="i_name"
+                                    placeholder="Enter your username" name="name" required>
                             </div>
-
+                            <span class="text-danger d-block" id="signIn-email-error"></span>
                         </div>
                         <div class="mb-lg-4">
-                            <label for="photo" class="form-label">Password</label>
+                            <label for="photo" class="form-label" name="password">Password</label>
                             <div class="input-group mlm">
                                 <span class="input-group-addon">
                                     <i class="bi bi-lock-fill"></i>
                                 </span>
-                                <input type="text" class = "form-control login-inputbox" id="password" placeholder="Enter your password" name="password" required>
+                                <input type="text" name="password" class = "form-control login-inputbox"
+                                    id="password" placeholder="Enter your password" name="password" required>
                             </div>
+                            <span class="text-danger d-block" id="signIn-password-error"></span>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer modal-border-removal">
-                    <button type="button" class="btn-sign">Sign In</button>
-                    <span>Don't have an account?<button class="blue-link" data-bs-target="#Register" data-bs-toggle="modal">Sign Up</button></span>
+                    <button type="button" id="btn-sign" class="btn-sign">Sign In</button>
+                    <span>Don't have an account?<button class="blue-link" data-bs-target="#Register"
+                            data-bs-toggle="modal">Sign Up</button></span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="Register" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal fade" id="Register" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true"
+        aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header modal-border-removal">
@@ -112,7 +128,8 @@
                                 <span class="input-group-addon">
                                     <i class="bi bi-person-fill"></i>
                                 </span>
-                                <input type="text" class = "form-control login-inputbox" placeholder="Enter your username" name="username" required>
+                                <input type="text" class = "form-control login-inputbox"
+                                    placeholder="Enter your username" name="username" required>
                             </div>
                         </div>
                         <div class="mb-lg-4">
@@ -120,7 +137,8 @@
                                 <span class="input-group-addon">
                                     <i class="bi bi-envelope-at-fill"></i>
                                 </span>
-                                <input type="email" class = "form-control login-inputbox" placeholder="Enter your email" name="email" required>
+                                <input type="email" class = "form-control login-inputbox"
+                                    placeholder="Enter your email" name="email" required>
                             </div>
                         </div>
                         <div class="mb-lg-4">
@@ -128,7 +146,8 @@
                                 <span class="input-group-addon">
                                     <i class="bi bi-lock-fill"></i>
                                 </span>
-                                <input type="text" class = "form-control login-inputbox" placeholder="Enter your password" name="password" required>
+                                <input type="text" class = "form-control login-inputbox"
+                                    placeholder="Enter your password" name="password" required>
                             </div>
                         </div>
                         <div class="mb-lg-4">
@@ -136,7 +155,8 @@
                                 <span class="input-group-addon">
                                     <i class="bi bi-shield-lock-fill"></i>
                                 </span>
-                                <input type="text" class = "form-control login-inputbox" placeholder="Retype your password to confirm" name="confirm_password" required>
+                                <input type="text" class = "form-control login-inputbox"
+                                    placeholder="Retype your password to confirm" name="confirm_password" required>
                             </div>
                         </div>
                         <div class="mb-lg-4">
@@ -144,7 +164,8 @@
                                 <span class="input-group-addon">
                                     <i class="bi bi-person-circle"></i>
                                 </span>
-                                <input type="text" class = "form-control login-inputbox" placeholder="Enter your full name" name="full_name" required>
+                                <input type="text" class = "form-control login-inputbox"
+                                    placeholder="Enter your full name" name="full_name" required>
                             </div>
                         </div>
                         <div class="mb-lg-4">
@@ -152,7 +173,8 @@
                                 <span class="input-group-addon">
                                     <i class="bi bi-telephone-fill"></i>
                                 </span>
-                                <input type="text" class = "form-control login-inputbox" placeholder="Enter your phone number" name="phone_number" required>
+                                <input type="text" class = "form-control login-inputbox"
+                                    placeholder="Enter your phone number" name="phone_number" required>
                             </div>
                         </div>
                         <div class="mb-lg-4">
@@ -160,14 +182,16 @@
                                 <span class="input-group-addon">
                                     <i class="bi bi-house-fill"></i>
                                 </span>
-                                <input type="text" class = "form-control login-inputbox" placeholder="Enter your address" name="address" required>
+                                <input type="text" class = "form-control login-inputbox"
+                                    placeholder="Enter your address" name="address" required>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer modal-border-removal">
                     <button type="button" class="btn-sign">Sign Up</button>
-                    <span>Already had an account?<button class="blue-link" data-bs-target="#SignIn" data-bs-toggle="modal">Sign In</button></span>
+                    <span>Already had an account?<button class="blue-link" data-bs-target="#SignIn"
+                            data-bs-toggle="modal">Sign In</button></span>
                 </div>
             </div>
         </div>
@@ -188,8 +212,8 @@
                             required>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class = "form-cus" id="year" placeholder="Year Created" name="year"
-                            required>
+                        <input type="text" class = "form-cus" id="year" placeholder="Year Created"
+                            name="year" required>
                     </div>
                     <div class="mb-3">
                         <label for="photo" class="form-label">Image of Antique</label>
@@ -275,4 +299,33 @@
             </div>
         </div>
     </footer>
+    <script>
+        const sigInErrors = {
+            'email': document.querySelector('#signIn-email-error'),
+            'password': document.querySelector('#signIn-password-error')
+        }
+        const signInForm = document.querySelector('#signIn-form')
+        document.querySelector('#btn-sign').addEventListener('click', function(e) {
+            Object.values(sigInErrors).forEach(v => {
+                v.innerText = ''
+            })
+            const formData = new FormData(signInForm)
+            axios.post('/login', formData).then(res => {
+                if (res.data.isAdmin) {
+                    return window.location = '/admin'
+                }
+                window.location.reload()
+            }).catch(error => {
+                console.log(error)
+                if (error.response.status === 422) {
+                    const validationErrors = error.response.data.errors
+                    for (let key in validationErrors) {
+                        if (key in sigInErrors) {
+                            sigInErrors[key].innerText = validationErrors[key][0]
+                        }
+                    }
+                }
+            })
+        })
+    </script>
 @endsection
