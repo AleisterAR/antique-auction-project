@@ -1,7 +1,6 @@
 @extends('master')
-
 @section('content')
-<body class="sb-nav-fixed">
+    <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark nav_ground">
         <a class="admin-brand ps-3" href="admin_panel.html">Timeless Treasuria</a>
         <button class="btn btn-link order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
@@ -22,16 +21,14 @@
             <nav class="sb-sidenav accordion sb-sidenav-cus" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Entries</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Administrators
+                            Entries
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="#">Registration</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">List</a>
+                                <a class="nav-link" href="layout-static.html">Registration</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
@@ -41,7 +38,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('entry-register') }}">Registration</a>
+                                <a class="nav-link" href="entry-register.blade.php">Registration</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">List</a>
                             </nav>
                         </div>
@@ -95,45 +92,47 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
-                    <h1 class="mt-4">Dashboard</h1>
-                    <br><br>
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-table me-1"></i>
-                            Antique Items Table
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Item Name</th>
-                                    <th>Creator</th>
-                                    <th>Year of Creation</th>
-                                    <th>Images</th>
-                                    <th>Certificate of Authenticity</th>
-                                    <th>Verification</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                </tr>
-                                <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>2011/07/25</td>
-                                    <td>$170,750</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                <br><br>
+                <div class="container px-4 form-container-style">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <h1 class="form-title">Registration</h1><br><br>
+                            <form method="POST" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <input type="text"  class = "form-cus" placeholder="Username" name="u_name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text"  class = "form-cus" placeholder="Email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text"  class = "form-cus" placeholder="Password" name="password" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-cus" type="text" name="confirm_password" placeholder="Confirm Password" required>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select-cus" aria-label="Default select example">
+                                        <option selected>Expert</option>
+                                        <option value="1">Admin</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text"  class = "form-cus" placeholder="Full name" name="fullname" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text"  class = "form-cus" placeholder="Phone Number" name="phone_number" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text"  class = "form-cus" placeholder="Address" name="address" required>
+                                </div>
+                                <br>
+                                <div class = "row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4 text-center"><button type="submit" class="btn-submit btn-submit-color">Submit</button></div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </form>
                         </div>
                     </div>
 

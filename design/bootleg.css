@@ -8105,10 +8105,18 @@ textarea.form-cus-lg {
 
 .text-muted {
     --bs-text-opacity: 1;
-    color: #6c757d !important;
+    color: #6c757d;
 }
 
-.a .text-muted:hover{
+.text-muted:hover{
+    color: white;
+}
+
+.text-mute{
+    color: #6c757d;
+}
+
+.text-mute:hover{
     color: white;
 }
 
@@ -8179,7 +8187,7 @@ textarea.form-cus-lg {
 }
 
 .bg-cus-footer {
-    background-color: #DE3C1C;
+    background-color: #222222;
 }
 
 .bg-dark {
@@ -11050,7 +11058,7 @@ body {
     color: #DE3C1C;
 }
 .sb-sidenav-cus .sb-sidenav-footer {
-    background-color: #222222;
+    background-color: #DE3C1C;
 }
 
 .sb-sidenav-dark {

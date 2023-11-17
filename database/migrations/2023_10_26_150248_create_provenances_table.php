@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('provenances', function (Blueprint $table) {
             $table->id();
             $table->foreignId('item_id')->constrained()->cascadeOnDelete();
-            $table->timestamps();
+            $table->text('certificate');
+            $table->string('creator');
+            $table->dateTime('year');
         });
     }
 

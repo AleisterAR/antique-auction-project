@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->text('image');
             $table->foreignId('item_id')->constrained()->cascadeOnDelete();
-            $table->timestamps();
         });
     }
 

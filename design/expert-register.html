@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>Dashboard - SB Admin</title>
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="bootleg.css">
@@ -19,6 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="../resources/js/scripts.js"></script>
 </head>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark nav_ground">
@@ -30,7 +31,7 @@
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#!">Settings</a></li>
                 <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                <li><hr class="dropdown-divider" /></li>
+                <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#!">Logout</a></li>
             </ul>
         </li>
@@ -41,26 +42,32 @@
         <nav class="sb-sidenav accordion sb-sidenav-cus" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading">Core</div>
-                    <a class="nav-link" href="index.html">
-                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        Dashboard
-                    </a>
-                    <div class="sb-sidenav-menu-heading">Interface</div>
+                    <div class="sb-sidenav-menu-heading">Entries</div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Layouts
+                        Administrators
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                            <a class="nav-link" href="layout-static.html">Registration</a>
+                            <a class="nav-link" href="layout-sidenav-light.html">List</a>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Experts
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="expert-register.blade.php">Registration</a>
+                            <a class="nav-link" href="layout-sidenav-light.html">List</a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                        Pages
+                        Random Bullshit
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -108,11 +115,40 @@
     </div>
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid px-4">
-                <h1 class="mt-4">Dashboard</h1>
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
+            <div class="container-fluid px-4 form-container-style">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <h1 class="form-title">Expert Registration</h1><br><br>
+                        <form method="POST" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <input type="text"  class = "form-cus" id="i_name" placeholder="Item Name" name="i_name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text"  class = "form-cus" id="creator" placeholder="Creator" name="creator" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text"  class = "form-cus" id="year" placeholder="Year Created" name="year" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="photo" class="form-label">Image of Antique</label>
+                                <input class="form-cus" type="file" name="photo" id="photo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="certificate" class="form-label">Certificate of Authenticity</label>
+                                <input class="form-cus" type="file" name="certificate" id="certificate">
+                            </div>
+                            <div class="mb-3">
+                                <textarea type="text"  class = "form-cus textarea-size" id="description" placeholder="Description" name="description" required></textarea>
+                            </div>
+                            <div class = "row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4 text-center"><button type="submit" class="btn-submit btn-submit-color">Submit</button></div>
+                                <div class="col-md-4"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
             </div>
         </main>
@@ -130,6 +166,5 @@
         </footer>
     </div>
 </div>
-<script src="../resources/js/scripts.js"></script>
 </body>
 </html>

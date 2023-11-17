@@ -10,8 +10,12 @@
     padding-right: 0.5rem;
 }
 
+.nav-space-last{
+    padding-right: 38px;
+}
+
 .nav-space-searchbar{
-    padding-right: 35px;
+    padding-right: 50px;
 }
 
 .cus-link {
@@ -44,8 +48,8 @@
 
 .cus-brand {
     padding-bottom: 6px;
-    margin-left: 3.05rem;
-    margin-right: 3rem;
+    margin-left: 45px;
+    margin-right: 50px;
     font-size: 1.75rem;
     text-decoration: none;
     white-space: nowrap;
@@ -344,9 +348,14 @@
     padding-top: 7px;
 }
 
+.li-after-sign-in{
+    padding-top: 10px;
+}
+
 .btn-submit{
     width: 45%;
-    border-color: white;
+    height: 45px;
+    border: solid white ;
 }
 
 .btn-submit-color {
@@ -359,6 +368,22 @@
     color: #DE3C1C;
     text-decoration: none;
     border-color: #DE3C1C;
+}
+
+.btn-user-icon{
+    color: white;
+    background-color: #DE3C1C;
+}
+
+.btn-user-icon:hover {
+    background-color: white;
+    color: #DE3C1C;
+    text-decoration: none;
+    border-color: #DE3C1C;
+}
+
+.dropdown-cus{
+    border-radius: 0;
 }
 
 .textarea-size {
