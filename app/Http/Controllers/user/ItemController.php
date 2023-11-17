@@ -16,10 +16,8 @@ class ItemController extends Controller
 
     public function store(Request $request)
     {     
-
-        $user = User::first();
         $item = new Item();
-        $item->user_id = $user->id;
+        $item->user_id = request()->user()->id;
         $item->name = $request->name;
         $item->creator = $request->creator;
         $item->year = $request->year;

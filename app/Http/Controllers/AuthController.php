@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AuthRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Models\User;
+use Exception;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
@@ -17,7 +21,7 @@ class AuthController extends Controller
 
             if ($request->wantsJson()) {
 
-                if(auth()->user()->role === 1) {
+                if (auth()->user()->role === 1) {
                     return response()->json(['isAdmin' => true]);
                 }
 
@@ -36,5 +40,33 @@ class AuthController extends Controller
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
+    }
+
+    public function register(RegisterRequest $request)
+    {
+        $data = $request->only(['user_name', 'full_name', 'email', 'password', 'phone_number', 'address']);
+        $data['password'] = bcrypt($data['password']);
+        try {
+            User::create($data);
+            if ($request->wantsJson()) {
+                return response()->json(['message' => 'success'], status: 200);
+            }
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+            if ($request->wantsJson()) {
+                return response()->json(['message' => $e->getMessage()], status: 500);
+            }
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('user.item-register.index');
     }
 }

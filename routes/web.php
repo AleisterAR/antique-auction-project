@@ -25,6 +25,8 @@ Route::get('/item-register', [ItemController::class, 'register'])->name('user.it
 Route::post('/item-register', [ItemController::class, 'store'])->name('user.item-register.store');
 
 Route::post('/login', [AuthController::class, 'login'])->name('user.login');
+Route::post('/register', [AuthController::class, 'register'])->name('user.register');
+Route::post('/logout', [AuthController::class, 'logout'])->name('user.logout');
 
 Route::get('/admin', HomeController::class)->name('admin.index')->middleware('admin.auth');
 Route::get('/entry-register', \App\Http\Controllers\admin\EntryRegisterController::class)->name('entry-register');
