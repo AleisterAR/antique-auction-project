@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->text('image');
-            $table->foreignId('item_id')->constrained()->cascadeOnDelete();
+            $table->string('file_name');
+            $table->string('extension');
+            $table->string('image_type');
+            $table->morphs('imageable');
+            $table->timestamps();
         });
     }
 

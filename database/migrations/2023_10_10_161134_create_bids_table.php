@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->integer('bid_amount');
             $table->dateTime('bid_time');
+            $table->timestamps();
         });
     }
 

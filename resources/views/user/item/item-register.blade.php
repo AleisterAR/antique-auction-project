@@ -146,7 +146,7 @@
                         <input class = "form-cus"
                                id="year"
                                name="year"
-                               type="text"
+                               type="date"
                                placeholder="Year Created">
                     </div>
                     <div class="mb-3">
@@ -168,7 +168,7 @@
                                for="photo">Image of Antique</label>
                         <input class="form-cus"
                                id="photo"
-                               name="photo"
+                               name="antique"
                                type="file">
                     </div>
                     <div class="mb-3">

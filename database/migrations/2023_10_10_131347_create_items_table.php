@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->tinyInteger('status')->default(0);
             $table->string('condition');
+            $table->text('description');
+            $table->timestamps();
         });
     }
 
