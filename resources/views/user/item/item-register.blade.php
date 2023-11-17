@@ -56,9 +56,11 @@
                                        href="#">Something else here</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item nav-space-searchbar">
-                            <a class="cus-link"
-                               href="#">CONTACT</a>
+                        <li class="nav-item nav-space">
+                            <a class="cus-link" href="#">CATEGORIES</a>
+                        </li>
+                        <li class="nav-item nav-space-last">
+                            <a class="cus-link" href="#">CONTACT</a>
                         </li>
                         <li class="nav-item nav-space-searchbar">
                             <form class="d-flex pad_for_s_bar"
