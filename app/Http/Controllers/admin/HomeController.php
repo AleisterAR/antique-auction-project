@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
+use App\Models\Item;
 class HomeController extends Controller
 {
-    
     public function __invoke()
     {
-        return view('admin.index');
+        $items = Item::with(['images', 'provenance.images'])->get();
+        return view('admin.index', compact('items'));
     }
 }

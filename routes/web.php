@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\HomeController;
+use App\Http\Controllers\admin\ItemController as AdminItemController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\user\ItemController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,10 @@ Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 Route::post('/register', [AuthController::class, 'register'])->name('user.register');
 Route::post('/logout', [AuthController::class, 'logout'])->name('user.logout');
 
-Route::get('/admin', HomeController::class)->name('admin.index')->middleware('admin.auth');
+Route::prefix('/admin')->group(function () {
+    Route::get('/', HomeController::class)->name('admin.index');
+    Route::patch('/item/{id}/status', [AdminItemController::class, 'updateStatus'])->name('admin.item.updateStatus');
+})->middleware('admin.auth');
+
 Route::get('/entry-register', \App\Http\Controllers\admin\EntryRegisterController::class)->name('entry-register');
 Route::get('/item-detail', \App\Http\Controllers\user\ItemDetailController::class)->name('item-detail');

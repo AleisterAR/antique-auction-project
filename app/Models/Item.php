@@ -10,7 +10,7 @@ class Item extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'condition', 'user_id'];
+    protected $fillable = ['name', 'description', 'condition', 'user_id', 'status'];
 
     public function imageable()
     {
@@ -20,5 +20,10 @@ class Item extends Model
     public function images(): MorphMany
     {
         return $this->morphMany(Image::class, 'imageable');
+    }
+
+    public function provenance()
+    {
+        return $this->hasOne(Provenance::class);
     }
 }
