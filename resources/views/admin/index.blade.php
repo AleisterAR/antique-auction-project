@@ -117,20 +117,20 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                </tr>
-                                <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>2011/07/25</td>
-                                    <td>$170,750</td>
+                                    <td>Schitterend stadsgezicht met personen</td>
+                                    <td>P.G. Vertin</td>
+                                    <td>1878</td>
+                                    <td><a href="#">Available! Click to view!</a></td>
+                                    <td><a href="#">Available! Click to view!</a></td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Unverified
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Verify</a></li>
+                                            <li><a class="dropdown-item" href="#">Unverify</a></li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>

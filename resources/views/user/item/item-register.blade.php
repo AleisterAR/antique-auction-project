@@ -78,16 +78,16 @@
                                 </div>
                             </form>
                         </li>
-                        <div class="li-sign-in">
-                            @guest
+                        @guest
+                            <div class="li-sign-in">
                                 <button class="btn-cus btn-sign-in"
                                         data-bs-toggle="modal"
                                         data-bs-target="#SignIn"
                                         type="button">
                                     Sign In
                                 </button>
-                            @endguest
-                        </div>
+                            </div>
+                        @endguest
                         @auth
                             <div class="li-after-sign-in">
                                 <div class="dropdown">
@@ -96,7 +96,6 @@
                                             type="button"
                                             aria-expanded="false">
                                         <i class="bi bi-person-fill"></i>
-                                        Dropdown button
                                     </button>
                                     <ul class="dropdown-menu dropdown-cus">
                                         <li><a class="dropdown-item"
