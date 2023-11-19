@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\admin\EntryRegisterController;
+use App\Http\Controllers\Admin\EntryRegisterController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\HomeController;
-use App\Http\Controllers\admin\ItemController;
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\ItemController;
 
 Route::prefix('/admin')->group(function () {
     Route::group(['middleware' => ['role:admin|expert']], function () {

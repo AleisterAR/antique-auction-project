@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\user\ItemController;
+use App\Http\Controllers\User\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
