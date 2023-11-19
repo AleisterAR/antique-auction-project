@@ -119,12 +119,21 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <br><br>
+    <div class="container item-detail-container-box">
         <div class="row">
-            <div class="col">
-                <h1 class="item-title-detail">
-                    Legendary Painting Pog Crazy
-                </h1>
+            <div class="col-7">
+                <h2 class="item-title-detail">
+                    Schitterend stadsgezicht met personen
+                </h2>
+                <img class="item-detail-img" src="{{asset("temp-image/image1.jpg")}}" alt="">
+            </div>
+            <div class="col-5">
+                <h5 class="bid-timer">Closes in 9h 29m 15s</h5>
+                <div class="item-bid-box">
+                    <span class="bid-font1">CURRENT BID</span>
+                    <h1 class="bid-font2">€ 850</h1>
+                </div>
             </div>
             <div class="col"></div>
         </div>
