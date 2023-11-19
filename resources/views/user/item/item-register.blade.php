@@ -147,7 +147,7 @@
                         <input class = "form-cus"
                                id="year"
                                name="year"
-                               type="date"
+                               type="text"
                                placeholder="Year Created">
                     </div>
                     <div class="mb-3">

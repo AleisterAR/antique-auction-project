@@ -189,7 +189,7 @@
                                             <tr>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->provenance->creator }}</td>
-                                                <td>1878</td>
+                                                <td>{{ $item->provenance->year }}</td>
                                                 <td>
                                                     @foreach ($item->images as $image)
                                                         <a href="{{ asset('storage/antique/' . $image->file_name) }}"
@@ -216,27 +216,27 @@
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li>
-                                                            <form action="{{ route('admin.item.updateStatus', ['id' => $item->id ]) }}"
+                                                            <form action="{{ route('admin.item.updateStatus', ['id' => $item->id]) }}"
                                                                   method="POST">
                                                                 @csrf
                                                                 @method('PATCH')
                                                                 <button class="dropdown-item"
-                                                                        @disabled(!!$item->status)
                                                                         name="status"
                                                                         type="submit"
-                                                                        value="1">Verify</button>
+                                                                        value="1"
+                                                                        @disabled(!!$item->status)>Verify</button>
                                                             </form>
                                                         </li>
                                                         <li>
-                                                            <form action="{{ route('admin.item.updateStatus', ['id' => $item->id ]) }}"
+                                                            <form action="{{ route('admin.item.updateStatus', ['id' => $item->id]) }}"
                                                                   method="POST">
                                                                 @csrf
                                                                 @method('PATCH')
                                                                 <button class="dropdown-item"
-                                                                        @disabled(!$item->status)
                                                                         name="status"
                                                                         type="1"
-                                                                        value="0">Unverify</button>
+                                                                        value="0"
+                                                                        @disabled(!$item->status)>Unverify</button>
                                                             </form>
                                                         </li>
                                                     </ul>

@@ -3,11 +3,8 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
-use App\Models\Image;
 use App\Models\Item;
-use App\Models\Items;
 use App\Models\Provenance;
-use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -56,7 +53,7 @@ class ItemController extends Controller
 
     private function storeProvenance(Request $request, $itemId)
     {
-        $data = array_merge($request->only(['creator']), ['item_id' => $itemId, 'year' => Carbon::parse($request->year)]);
+        $data = array_merge($request->only(['creator']), ['item_id' => $itemId, 'year' => $request->year]);
         $provenance = Provenance::create($data);
         $authenticityImage = $request->file('certificate');
         $authenticityImage->store('certificate');

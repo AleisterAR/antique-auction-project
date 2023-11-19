@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('item_id')->constrained()->cascadeOnDelete();
             $table->string('creator');
-            $table->year('year');
+            $table->string('year');
             $table->timestamps();
         });
     }

@@ -21,14 +21,8 @@ class AuthRequest extends FormRequest
      */
     public function rules(): array
     {
-        if ($this->method() === 'POST') {
-            return [
-                'email' => ['required', 'email'],
-                'password' => ['required', 'min:8', 'max:20']
-            ];
-        }
         return [
-            'email' => ['required', 'unique:users,email', 'email'],
+            'email' => ['required', 'email'],
             'password' => ['required', 'min:8', 'max:20']
         ];
     }

@@ -20,14 +20,9 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             if ($request->wantsJson()) {
-
-                if (auth()->user()->role === 1) {
-                    return response()->json(['isAdmin' => true]);
-                }
-
-                return response()->json(['isAdmin' => false]);
+                $user = auth()->user();
+                return response()->json(['user' =>  $user, 'roles' => $user->roles]);
             }
-
             return redirect()->intended('/');
         }
 

@@ -10,11 +10,14 @@ document.querySelector('#btn-sign').addEventListener('click', function (e) {
     })
     const formData = new FormData(signInForm)
     axios.post('/login', formData).then(res => {
-        if (res.data.isAdmin) {
-            return window.location = '/admin'
+        const user = res.data.user
+        if (user.roles?.length && user.roles?.some(r => r.name === 'admin' || r.name === 'expert')) {
+            return window.location.pathname = '/admin'
         }
         window.location.reload()
+
     }).catch(error => {
+        console.log(error)
         if (error.response.status === 422) {
             const validationErrors = error.response.data.errors
             for (let key in validationErrors) {
@@ -52,7 +55,7 @@ document.querySelector('#btn-sign-up').addEventListener('click', function (e) {
             }
         }
 
-        if(error.response.status === 500) {
+        if (error.response.status === 500) {
             alert('Server Error')
         }
     })
