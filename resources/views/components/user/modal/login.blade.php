@@ -45,7 +45,7 @@
                                    id="password"
                                    name="password"
                                    name="password"
-                                   type="text"
+                                   type="password"
                                    placeholder="Enter your password"
                                    required>
                         </div>
