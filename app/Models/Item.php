@@ -26,4 +26,8 @@ class Item extends Model
     {
         return $this->hasOne(Provenance::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
