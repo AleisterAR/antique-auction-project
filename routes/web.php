@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\admin\HomeController;
-use App\Http\Controllers\admin\ItemController as AdminItemController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\user\ItemController;
+use App\Http\Controllers\User\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,24 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require_once( __DIR__ . '/admin.php');
+
 Route::get('/', function () {
     $i = asset('storage/antique/5iDhmI4Qpj1zGbEj7UnfTce2Y45zwEFNWWbAUiq7.png');
     echo "<image src='$i'/>";
 });
 
-
-Route::get('/item-register', [ItemController::class, 'register'])->name('user.item-register.index');
-Route::post('/item-register', [ItemController::class, 'store'])->name('user.item-register.store');
-
 Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 Route::post('/register', [AuthController::class, 'register'])->name('user.register');
 Route::post('/logout', [AuthController::class, 'logout'])->name('user.logout');
 
-Route::prefix('/admin')->group(function () {
-    Route::group(['middleware' => ['role:admin']], function () {
-        Route::get('/', HomeController::class)->name('admin.index');
-        Route::patch('/item/{id}/status', [AdminItemController::class, 'updateStatus'])->name('admin.item.updateStatus');
-    });
-});
-Route::get('/entry-register', \App\Http\Controllers\admin\EntryRegisterController::class)->name('entry-register');
+
+Route::get('/item-register', [ItemController::class, 'register'])->name('user.item-register.index');
+Route::post('/item-register', [ItemController::class, 'store'])->name('user.item-register.store');
 Route::get('/item-detail', \App\Http\Controllers\user\ItemDetailController::class)->name('item-detail');

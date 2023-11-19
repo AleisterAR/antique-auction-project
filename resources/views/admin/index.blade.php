@@ -108,7 +108,7 @@
                                                     @endforeach
                                                 </td>
                                                 <td>
-                                                    <button data-bs-toggle="dropdown"
+                                                    <button @role('expert') @else disabled @endrole  data-bs-toggle="dropdown"
                                                             type="button"
                                                             aria-expanded="false"
                                                             @class([
