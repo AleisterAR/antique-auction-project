@@ -134,7 +134,8 @@
                     <hr>
                     <span class="bid-font3">CURRENTLY, NO ONGOING AUCTION</span>
                     <hr>
-                    <button type="button" class="btn btn-start-auction">Start Auction</button>
+                    <button type="button" class="btn btn-start-auction" data-bs-toggle="modal"
+                            data-bs-target="#StartAuction">Start Auction</button>
                     <div class="d-none">
                         <span class="bid-font1">CURRENT BID</span>
                         <h1 class="bid-font2">€ 850</h1>

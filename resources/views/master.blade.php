@@ -26,6 +26,7 @@
     <div id="modal">
         <x-user.modal.login />
         <x-user.modal.register />
+        <x-user.modal.auction />
     </div>
     @yield('content')
 
