@@ -122,20 +122,64 @@
     <br><br>
     <div class="container item-detail-container-box">
         <div class="row">
-            <div class="col-7">
+            <div class="col-md-8 col-12">
                 <h2 class="item-title-detail">
                     Schitterend stadsgezicht met personen
                 </h2>
                 <img class="item-detail-img" src="{{asset("temp-image/image1.jpg")}}" alt="">
+                <br>
             </div>
-            <div class="col-5">
-                <h5 class="bid-timer">Closes in 9h 29m 15s</h5>
+            <div class="col-md-4 col-12">
                 <div class="item-bid-box">
                     <span class="bid-font1">CURRENT BID</span>
                     <h1 class="bid-font2">€ 850</h1>
+                    <br>
+                    <input class="form-control bid-input"
+                           type="search"
+                           aria-label="Search"
+                           aria-describedby="ba2"
+                           placeholder="€ 950 or higher">
+                    <button type="button" class="btn btn-bid">Place bid</button>
+                    <hr>
+                    <h5 class="text-center">Closes in 9h 29m 15s</h5>
+                    <hr>
+                    <table class="table table-borderless">
+                        <tbody>
+                        <tr>
+                            <th class="bid-tr latest-bidder">User1</th>
+                            <th class="bid-tr latest-bidder">1 day ago</th>
+                            <th class="bid-tr bid-price latest-bidder">€ 850</th>
+                        </tr>
+                        <tr>
+                            <td class="bid-tr">User2</td>
+                            <td class="bid-tr">1 day ago</td>
+                            <td class="bid-tr bid-price">€ 625</td>
+                        </tr>
+                        <tr>
+                            <td class="bid-tr">User3</td>
+                            <td class="bid-tr">2 day ago</td>
+                            <td class="bid-tr bid-price">€ 440</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <p>The Hague
+                    The painter Petrus Gerardus Vertin was born in 1819 in The Hague. He lived and worked mainly in The Hague during his life. Vertin was a student at the Hague Academy of Visual Arts.
+
+                    P.G. Vertin often painted cityscapes (streets), which were not always topographical. His work is notable for its special use of light effects. The light reflections on snow-covered roofs, window frames and sidewalks are beautifully depicted, especially in his winter views.
+
+                    Various cityscapes of Vertin have been painted by the painters
+                    C. Rochussen and S.L. Verveer.
+
+                    Paintings by this painter are owned by various museums: including the Centraal Museum in Utrecht and the Hague Municipal Museum.</p>
+            </div>
+            <div class="col-md-4 col-12">
+
+            </div>
         </div>
     </div>
     <footer class="footer">
