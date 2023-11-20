@@ -24,8 +24,7 @@
                             <input class = "form-control login-inputbox"
                                    name="user_name"
                                    type="text"
-                                   placeholder="Enter your username"
-                                   required>
+                                   placeholder="Enter your username">
                         </div>
                         <span class="text-danger d-block"
                         id="signUp-user_name-error"></span>
@@ -38,8 +37,7 @@
                             <input class = "form-control login-inputbox"
                                    name="email"
                                    type="email"
-                                   placeholder="Enter your email"
-                                   required>
+                                   placeholder="Enter your email">
                         </div>
                         <span class="text-danger d-block"
                         id="signUp-email-error"></span>
@@ -52,8 +50,7 @@
                             <input class = "form-control login-inputbox"
                                    name="password"
                                    type="text"
-                                   placeholder="Enter your password"
-                                   required>
+                                   placeholder="Enter your password">
                         </div>
                         <span class="text-danger d-block"
                         id="signUp-password-error"></span>
@@ -66,8 +63,7 @@
                             <input class = "form-control login-inputbox"
                                    name="password_confirmation"
                                    type="text"
-                                   placeholder="Retype your password to confirm"
-                                   required>
+                                   placeholder="Retype your password to confirm">
                         </div>
                         <span class="text-danger d-block"
                         id="signUp-password_confirmation-error"></span>
@@ -80,8 +76,7 @@
                             <input class = "form-control login-inputbox"
                                    name="full_name"
                                    type="text"
-                                   placeholder="Enter your full name"
-                                   required>
+                                   placeholder="Enter your full name">
                         </div>
                         <span class="text-danger d-block"
                         id="signUp-full_name-error"></span>
@@ -94,8 +89,7 @@
                             <input class = "form-control login-inputbox"
                                    name="phone_number"
                                    type="text"
-                                   placeholder="Enter your phone number"
-                                   required>
+                                   placeholder="Enter your phone number">
                         </div>
                         <span class="text-danger d-block"
                         id="signUp-phone_number-error"></span>
@@ -108,8 +102,7 @@
                             <input class = "form-control login-inputbox"
                                    name="address"
                                    type="text"
-                                   placeholder="Enter your address"
-                                   required>
+                                   placeholder="Enter your address">
                         </div>
                         <span class="text-danger d-block"
                         id="signUp-address-error"></span>

@@ -686,6 +686,13 @@ textarea.form-cus-lg {
     line-height: 1.2857142857;
 }
 
+.item-description{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.4705882353;
+    font-weight: bold;
+}
+
 .bid-input{
     color: black;
     background-color: #D2D9E1;
@@ -723,6 +730,22 @@ textarea.form-cus-lg {
     border: #DE3C1C 1px solid;
 }
 
+.btn-start-auction{
+    margin-top: 15px;
+    border: #DE3C1C 1px solid;
+    height: 3.25rem;
+    width: 130px;
+    text-align: center;
+    border-radius: 0;
+    color: #DE3C1C;
+    background-color: white;
+}
+
+.btn-start-auction:hover{
+    color: white;
+    border: 0.0625rem solid #d2d9e1;
+    background-color: #DE3C1C;
+}
 .latest-bidder{
     font-weight: 700;
 }
@@ -736,4 +759,17 @@ textarea.form-cus-lg {
 
 .bid-price{
     text-align: right;
+}
+
+.item-detail-title{
+    font-family: "Basis Grotesque Arabic Pro",monospace;
+    font-size: .7775rem;
+    font-weight: 500;
+    letter-spacing: .0625rem;
+    color: #565b60;
+    text-transform: uppercase;
+}
+
+.verified-item-icon{
+    color: forestgreen;
 }

@@ -27,8 +27,7 @@
                                    id="i_name"
                                    name="email"
                                    type="text"
-                                   placeholder="Enter your email"
-                                   required>
+                                   placeholder="Enter your email">
                         </div>
                         <span class="text-danger d-block"
                               id="signIn-email-error"></span>
@@ -46,8 +45,7 @@
                                    name="password"
                                    name="password"
                                    type="password"
-                                   placeholder="Enter your password"
-                                   required>
+                                   placeholder="Enter your password">
                         </div>
                         <span class="text-danger d-block"
                               id="signIn-password-error"></span>

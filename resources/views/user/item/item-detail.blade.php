@@ -131,43 +131,68 @@
             </div>
             <div class="col-md-4 col-12">
                 <div class="item-bid-box">
-                    <span class="bid-font1">CURRENT BID</span>
-                    <h1 class="bid-font2">€ 850</h1>
-                    <br>
-                    <input class="form-control bid-input"
-                           type="search"
-                           aria-label="Search"
-                           aria-describedby="ba2"
-                           placeholder="€ 950 or higher">
-                    <button type="button" class="btn btn-bid">Place bid</button>
                     <hr>
-                    <h5 class="text-center">Closes in 9h 29m 15s</h5>
+                    <span class="bid-font3">CURRENTLY, NO ONGOING AUCTION</span>
                     <hr>
-                    <table class="table table-borderless">
-                        <tbody>
-                        <tr>
-                            <th class="bid-tr latest-bidder">User1</th>
-                            <th class="bid-tr latest-bidder">1 day ago</th>
-                            <th class="bid-tr bid-price latest-bidder">€ 850</th>
-                        </tr>
-                        <tr>
-                            <td class="bid-tr">User2</td>
-                            <td class="bid-tr">1 day ago</td>
-                            <td class="bid-tr bid-price">€ 625</td>
-                        </tr>
-                        <tr>
-                            <td class="bid-tr">User3</td>
-                            <td class="bid-tr">2 day ago</td>
-                            <td class="bid-tr bid-price">€ 440</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <button type="button" class="btn btn-start-auction">Start Auction</button>
+                    <div class="d-none">
+                        <span class="bid-font1">CURRENT BID</span>
+                        <h1 class="bid-font2">€ 850</h1>
+                        <br>
+                        <input class="form-control bid-input"
+                               type="search"
+                               aria-label="Search"
+                               aria-describedby="ba2"
+                               placeholder="€ 950 or higher">
+                        <button type="button" class="btn btn-bid">Place bid</button>
+                        <hr>
+                        <h5 class="text-center">Closes in 9h 29m 15s</h5>
+                        <hr>
+                        <table class="table table-borderless">
+                            <tbody>
+                            <tr>
+                                <th class="bid-tr latest-bidder">User1</th>
+                                <th class="bid-tr latest-bidder">1 day ago</th>
+                                <th class="bid-tr bid-price latest-bidder">€ 850</th>
+                            </tr>
+                            <tr>
+                                <td class="bid-tr">User2</td>
+                                <td class="bid-tr">1 day ago</td>
+                                <td class="bid-tr bid-price">€ 625</td>
+                            </tr>
+                            <tr>
+                                <td class="bid-tr">User3</td>
+                                <td class="bid-tr">2 day ago</td>
+                                <td class="bid-tr bid-price">€ 440</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-8 col-12">
-                <p>The Hague
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="item-detail-title">Name of Antique</span><br>
+                        <span class="item-description">Schitterend stadsgezicht met personen</span><br><br>
+                        <span class="item-detail-title">Category</span><br>
+                        <span class="item-description">Painting</span><br><br>
+                        <span class="item-detail-title">Condition</span><br>
+                        <span class="item-description">Excellent Condition</span><br><br>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="item-detail-title">Creator</span><br>
+                        <span class="item-description">P.G. Vertin</span><br><br>
+                        <span class="item-detail-title">Year</span><br>
+                        <span class="item-description">1878</span><br><br>
+                        <span class="item-detail-title">Verification Status</span><br>
+                        <span class="item-description">Verified <i class="bi bi-check2-circle verified-item-icon"></i></span><br><br>
+                    </div>
+                </div>
+                <span class="item-detail-title">Description</span>
+                <p class="item-description">The Hague
                     The painter Petrus Gerardus Vertin was born in 1819 in The Hague. He lived and worked mainly in The Hague during his life. Vertin was a student at the Hague Academy of Visual Arts.
 
                     P.G. Vertin often painted cityscapes (streets), which were not always topographical. His work is notable for its special use of light effects. The light reflections on snow-covered roofs, window frames and sidewalks are beautifully depicted, especially in his winter views.
@@ -176,9 +201,6 @@
                     C. Rochussen and S.L. Verveer.
 
                     Paintings by this painter are owned by various museums: including the Centraal Museum in Utrecht and the Hague Municipal Museum.</p>
-            </div>
-            <div class="col-md-4 col-12">
-
             </div>
         </div>
     </div>

@@ -28,7 +28,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">Registration</a>
+                                <a class="nav-link" href="{{route('entry-register')}}">Registration</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
@@ -60,16 +60,16 @@
                             <h1 class="form-title">Registration</h1><br><br>
                             <form method="POST" enctype="multipart/form-data">
                                 <div class="mb-3">
-                                    <input type="text"  class = "form-cus" placeholder="Username" name="u_name" required>
+                                    <input type="text"  class = "form-cus" placeholder="Username" name="u_name">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="text"  class = "form-cus" placeholder="Email" name="email" required>
+                                    <input type="text"  class = "form-cus" placeholder="Email" name="email">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="text"  class = "form-cus" placeholder="Password" name="password" required>
+                                    <input type="text"  class = "form-cus" placeholder="Password" name="password">
                                 </div>
                                 <div class="mb-3">
-                                    <input class="form-cus" type="text" name="confirm_password" placeholder="Confirm Password" required>
+                                    <input class="form-cus" type="text" name="confirm_password" placeholder="Confirm Password">
                                 </div>
                                 <div class="mb-3">
                                     <select class="form-select-cus" aria-label="Default select example">
@@ -78,13 +78,13 @@
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <input type="text"  class = "form-cus" placeholder="Full name" name="fullname" required>
+                                    <input type="text"  class = "form-cus" placeholder="Full name" name="fullname">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="text"  class = "form-cus" placeholder="Phone Number" name="phone_number" required>
+                                    <input type="text"  class = "form-cus" placeholder="Phone Number" name="phone_number">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="text"  class = "form-cus" placeholder="Address" name="address" required>
+                                    <input type="text"  class = "form-cus" placeholder="Address" name="address">
                                 </div>
                                 <br>
                                 <div class = "row">
