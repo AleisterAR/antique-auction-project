@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-require_once( __DIR__ . '/admin.php');
+require_once(__DIR__ . '/admin.php');
 
 Route::get('/', function () {
     $i = asset('storage/antique/5iDhmI4Qpj1zGbEj7UnfTce2Y45zwEFNWWbAUiq7.png');
@@ -27,6 +27,6 @@ Route::post('/register', [AuthController::class, 'register'])->name('user.regist
 Route::post('/logout', [AuthController::class, 'logout'])->name('user.logout');
 
 
-Route::get('/item-register', [ItemController::class, 'register'])->name('user.item-register.index');
-Route::post('/item-register', [ItemController::class, 'store'])->name('user.item-register.store');
-Route::get('/item-detail', \App\Http\Controllers\user\ItemDetailController::class)->name('item-detail');
+Route::get('/item/create', [ItemController::class, 'create'])->name('user.item.create');
+Route::post('/item/store', [ItemController::class, 'store'])->name('user.item.store');
+Route::get('/item/show', [ItemController::class, 'show'])->name('user.item.detail');

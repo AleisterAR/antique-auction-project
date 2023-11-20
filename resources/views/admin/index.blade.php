@@ -108,7 +108,7 @@
                                                     @endforeach
                                                 </td>
                                                 <td>
-                                                    <button @role('expert') @else disabled @endrole  data-bs-toggle="dropdown"
+                                                    <button @role('admin') disabled @endrole  data-bs-toggle="dropdown"
                                                             type="button"
                                                             aria-expanded="false"
                                                             @class([
@@ -121,7 +121,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li>
-                                                            <form action="{{ route('admin.item.updateStatus', ['id' => $item->id]) }}"
+                                                            <form action="{{ route('admin.item.update.status', ['id' => $item->id]) }}"
                                                                   method="POST">
                                                                 @csrf
                                                                 @method('PATCH')
@@ -133,7 +133,7 @@
                                                             </form>
                                                         </li>
                                                         <li>
-                                                            <form action="{{ route('admin.item.updateStatus', ['id' => $item->id]) }}"
+                                                            <form action="{{ route('admin.item.update.status', ['id' => $item->id]) }}"
                                                                   method="POST">
                                                                 @csrf
                                                                 @method('PATCH')

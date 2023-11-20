@@ -57,10 +57,12 @@
                             </ul>
                         </li>
                         <li class="nav-item nav-space">
-                            <a class="cus-link" href="#">CATEGORIES</a>
+                            <a class="cus-link"
+                               href="#">CATEGORIES</a>
                         </li>
                         <li class="nav-item nav-space-last">
-                            <a class="cus-link" href="#">CONTACT</a>
+                            <a class="cus-link"
+                               href="#">CONTACT</a>
                         </li>
                         <li class="nav-item nav-space-searchbar">
                             <form class="d-flex pad_for_s_bar"
@@ -104,7 +106,8 @@
                                             <hr class="dropdown-divider">
                                         </li>
                                         <li>
-                                            <form action={{ route('user.logout') }} method="POST">
+                                            <form action={{ route('user.logout') }}
+                                                  method="POST">
                                                 @csrf
                                                 <button class="dropdown-item"
                                                         type="submit">Log out</button>
@@ -124,7 +127,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <h1 class="form-title">Item Registration</h1><br><br>
-                <form action={{ route('user.item-register.store') }}
+                <form action={{ route('user.item.store') }}
                       method="POST"
                       enctype="multipart/form-data">
                     @csrf
