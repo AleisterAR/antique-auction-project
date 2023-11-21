@@ -18,6 +18,11 @@ class UserController extends Controller
         $this->userRepository = $userRepository;
     }
 
+    public function index()
+    {
+        return view('admin.user.index');
+    }
+
     public function create()
     {
         $roles = $this->roleRepository->getAll();
@@ -25,7 +30,7 @@ class UserController extends Controller
     }
 
     public function store(Request $request)
-    {   
+    {
         $this->userRepository->store($request);
         session()->flash('success', 'Item created successfully.');
         return to_route('admin.user.create');
