@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\EntryRegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ItemController;
+use App\Http\Controllers\Admin\UserController;
 
 Route::prefix('/admin')->group(function () {
     Route::group(['middleware' => ['role:admin|expert']], function () {
@@ -11,11 +12,12 @@ Route::prefix('/admin')->group(function () {
         Route::get('/entry-register', EntryRegisterController::class)->name('entry-register');
     });
 
-    Route::group(['middleware' => ['role:admin']], function() {
-        Route::post('/user', [EntryRegisterController::class, 'store'])->name('admin.user.store');
+    Route::group(['middleware' => ['role:admin']], function () {
+        Route::get('/user/create', [UserController::class, 'create'])->name('admin.user.create');
+        Route::post('/user/store', [UserController::class, 'store'])->name('admin.user.store');
     });
 
     Route::group(['middleware' => ['role:expert']], function () {
-        Route::patch('/item/{id}/status', [ItemController::class, 'updateStatus'])->name('admin.item.updateStatus');
+        Route::patch('/item/{id}/status', [ItemController::class, 'status'])->name('admin.item.update.status');
     });
 });

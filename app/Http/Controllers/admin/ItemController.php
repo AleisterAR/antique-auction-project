@@ -4,15 +4,20 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Item;
+use App\Repository\Admin\ItemRepository;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    public function updateStatus(Request $request, $id)
+    protected $itemRepository;
+    public function __construct(ItemRepository $itemRepository)
     {
-        $status = $request->status;
-        $item = Item::findOrFail($id);
-        $item->update(['status' => $status]);
+        $this->itemRepository = $itemRepository;
+    }
+
+    public function status(Request $request, $id)
+    {
+        $this->itemRepository->status($request,$id);
         return back();
     }
 }
