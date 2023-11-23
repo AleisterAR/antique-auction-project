@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\UserController;
 Route::prefix('/admin')->group(function () {
     Route::group(['middleware' => ['role:admin|expert']], function () {
         Route::get('/', HomeController::class)->name('admin.index');
-        Route::get('/user', [UserController::class,'index'])->name('admin.user.index');
+        Route::get('/user', [UserController::class, 'index'])->name('admin.user.index');
     });
 
     Route::group(['middleware' => ['role:admin']], function () {

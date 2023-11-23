@@ -6,7 +6,9 @@
      aria-hidden="true"
      tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content login-form">
+        <form id="auction-form" class="modal-content login-form">
+            @csrf
+            <input type="hidden" name="item_id" value="{{ request()->id }}">
             <div class="modal-header modal-border-removal">
                 <h1 class="modal-title fs-4 login-title-c">Start an Auction</h1>
                 <button class="btn-close"
@@ -15,14 +17,14 @@
                         aria-label="Close"></button>
             </div>
             <div class="modal-body modal-border-removal">
-                <form id="auction-form">
+                <div>
                     <div class="mb-lg-4">
                         <label class="form-label"
                                for="photo">Start Date</label>
                         <div class="mb-lg-4">
                             <div class="input-group">
-                                <input class = "form-control"
-                                       name="start-time"
+                                <input class="form-control"
+                                       name="start_time"
                                        type="datetime-local">
                             </div>
                         </div>
@@ -32,8 +34,8 @@
                                name="password"
                                for="photo">End Date</label>
                         <div class="input-group mlm">
-                            <input class = "form-control"
-                                   name="end-time"
+                            <input class="form-control"
+                                   name="end_time"
                                    type="datetime-local">
                         </div>
                         <span class="text-danger d-block"
@@ -44,20 +46,20 @@
                                name="password"
                                for="photo">Initial Price</label>
                         <div class="input-group mlm">
-                            <input class = "form-control"
-                                   name="start-price"
+                            <input class ="form-control"
+                                   name="start_price"
                                    type="text"
                                    placeholder="Initial Price for Antique">
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
             <div class="modal-footer modal-border-removal">
-                <button class="btn-start-auction"
+                <button type="submit" class="btn-start-auction"
                         id="start-auction"
                         type="button">Start Auction</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 

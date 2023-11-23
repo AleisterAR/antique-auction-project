@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
@@ -46,9 +46,12 @@ class DatabaseSeeder extends Seeder
             User::query()->create($user);
         }
 
-        Role::create( ['name' => 'admin']);
-        Role::create( ['name' => 'expert']);
+        Role::query()->create(['name' => 'admin']);
+        Role::query()->create(['name' => 'expert']);
+        
         $user = User::query()->first();
         $user->assignRole(Role::get());
+
+        Category::query()->create(['name' => 'painting']);
     }
 }

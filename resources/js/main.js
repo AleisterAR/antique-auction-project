@@ -60,3 +60,9 @@ document.querySelector('#btn-sign-up').addEventListener('click', function (e) {
         }
     })
 })
+
+document.querySelector('#auction-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(e.target)
+    alert()
+})

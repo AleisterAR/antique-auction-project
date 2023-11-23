@@ -15,17 +15,13 @@ class ProvenanceRepository
         $this->model = $provenance;
     }
 
-    public function store(Request $request, $itemId)
+    public function store($data)
     {
-        $data = array_merge($request->only(['creator']), ['item_id' => $itemId, 'year' => $request->year]);
-        $provenance = $this->model::create($data);
-        $authenticityImage = $request->file('certificate');
-        $authenticityImage->store('certificate');
-        $provenance->images()->createMany([[
-            'file_name' => $authenticityImage->hashName(),
-            'extension' => $authenticityImage->extension(),
-            'image_type' => config('global.image_type.certificate')
-        ]]);
-        return $provenance;
+        return $this->model::create($data);
+    }
+
+    public function storeImages(Provenance $provenance, $data)
+    {
+        $provenance->images()->createMany($data);
     }
 }

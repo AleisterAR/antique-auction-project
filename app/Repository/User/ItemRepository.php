@@ -2,6 +2,7 @@
 
 namespace App\Repository\User;
 
+use App\Models\Image;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
@@ -13,17 +14,31 @@ class ItemRepository
         $this->model = $item;
     }
 
-    public function store(Request $request)
+    public function store($data): Item
     {
-        $data = array_merge($request->only(['name', 'description', 'condition']), ['user_id' => $request->user()->id]);
-        $item = $this->model::create($data);
-        $antiqueImage = $request->file('antique');
-        $antiqueImage->store('antique');
-        $item->images()->createMany([[
-            'file_name' => $antiqueImage->hashName(),
-            'extension' => $antiqueImage->extension(),
-            'image_type' => config('global.image_type.image_of_antique')
-        ]]);
-        return $item;
+        return $this->model::create($data);
+    }
+
+    public function findOneByUser($id, $userId, $select = '*'): Item
+    {
+        return $this->model::query()
+            ->select($select)
+            ->with(['image', 'provenance'])
+            ->where('user_id', $userId)
+            ->where('id', $id)
+            ->firstOrFail();
+    }
+
+    public function findById($id, $select = '*'): Item
+    {
+        return $this->model::query()
+            ->select($select)
+            ->with(['image', 'provenance'])
+            ->findOrFail($id);
+    }
+
+    public function storeImages(Item $item, $data)
+    {
+        $item->images()->createMany($data);
     }
 }

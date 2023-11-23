@@ -155,9 +155,11 @@
                     </div>
                     <div class="mb-3">
                         <select class="form-select-cus"
+                                name="category_id"
                                 aria-label="Default select example">
-                            <option selected>Painting</option>
-                            <option value="1">Admin</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="mb-3">

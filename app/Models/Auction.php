@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Auction extends Model
 {
     use HasFactory;
-     public function user(){
-         return $this->belongsTo(User::class);
-     }
+
+    protected $fillable = ['start_time', 'end_time', 'initial_price', 'user_id', 'item_id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

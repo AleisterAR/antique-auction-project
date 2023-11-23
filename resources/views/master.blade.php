@@ -28,9 +28,9 @@
         <x-user.modal.register />
         <x-user.modal.auction />
     </div>
-    @yield('content')
-
     @vite('resources/js/main.js')
+    @yield('content')
+    @yield('script')
 </body>
 
 </html>
