@@ -286,7 +286,8 @@
 
 @section('script')
     <script>
-        var $auctionId = {!! json_encode($item->auction->id ?? null) !!}
+        var $auctionId = {!! json_encode($item->auction->id ?? null) !!};
+        var $topfiveBid = {!! json_encode($item->auction->topFiveBids ?? null) !!};
     </script>
     @vite('resources/js/front/item-detail.js')
 @endsection

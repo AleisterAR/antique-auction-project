@@ -20,7 +20,7 @@ class BidRepository
 
     public function currentBid($userId, $auctionId)
     {
-        return $this->model::where('auction_id', $auctionId)
+        return $this->model::query()->where('auction_id', $auctionId)
             ->orderBy('bid_amount', 'desc')
             ->first();
     }

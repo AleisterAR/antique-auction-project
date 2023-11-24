@@ -38,18 +38,15 @@ class BidControlller extends Controller
      */
     public function store(Request $request)
     {
-        DB::beginTransaction();
         try {
             $data = array_merge($request->only(['auction_id', 'bid_amount']), ['bid_time' => now(), 'user_id' => $request->user()->id]);
             $bid = $this->bidRepository->store($data);
-            $bid->load('user');
-            DB::commit();
             BidItem::dispatch($bid);
+            $bid->load('user');
             if ($request->wantsJson()) {
                 return response()->json($bid);
             }
         } catch (Throwable $e) {
-            DB::rollBack();
             Log::error($e->getMessage());
         }
     }
