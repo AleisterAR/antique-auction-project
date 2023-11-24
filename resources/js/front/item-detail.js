@@ -1,10 +1,8 @@
-
-window.Echo
 if ($auctionId) {
     const currentBitAmount = document.querySelector('#current-bid-amount')
     const bidUser = document.querySelector('#bid-users')
     if ($topfiveBid) {
-        setTimeout(() => {
+        setInterval(() => {
             const h = $topfiveBid?.map(bid => {
                 return `
                 <tr>
@@ -65,15 +63,30 @@ if ($auctionId) {
         });
 
     const bidAmount = document.querySelector('#bid-amount')
+    const bidContainer = document.querySelector('#bid-container')
+    const bidButton = bidContainer.querySelector('button')
+    const bidInput = bidContainer.querySelector('input')
+    const bidSpinner = bidContainer.querySelector('.spinner-border')
 
     document.querySelector('#place-bid')?.addEventListener('click', function () {
         if (!bidAmount.value) {
-            return alert('Empty')
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Start the bidding by entering your offer!",
+            });
         }
+        bidInput.classList.add('disabled')
+        bidButton.classList.add('disabled')
+        bidSpinner.classList.remove('d-none')
         axios.post('/bid', { bid_amount: bidAmount.value, auction_id: $auctionId }).then(res => {
             bidAmount.value = '';
         }).catch(error => {
             console.log(error)
+        }).finally(() => {
+            bidInput.classList.remove('disabled')
+            bidButton.classList.remove('disabled')
+            bidSpinner.classList.add('d-none')
         })
     })
 }

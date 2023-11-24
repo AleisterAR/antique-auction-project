@@ -13,12 +13,18 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 import updateLocale from 'dayjs/plugin/updateLocale'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 
 dayjs.extend(utc)
 dayjs.extend(relativeTime)
 dayjs.extend(timezone)
 dayjs.extend(updateLocale)
 dayjs.tz.setDefault("Asia/Yangon")
+
+window.Swal = Swal;
+window.axios = axios;
+window.dayjs = dayjs
 
 dayjs.updateLocale('en', {
     relativeTime: {
@@ -37,10 +43,6 @@ dayjs.updateLocale('en', {
       yy: "%d years"
     }
   })
-
-window.axios = axios;
-window.moment = moment
-window.dayjs = dayjs
 
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';

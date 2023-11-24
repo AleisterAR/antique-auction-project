@@ -136,9 +136,11 @@
             </div>
             <div class="col-md-4 col-12">
                 <div class="item-bid-box">
-                    <hr>
-                    <span class="bid-font3">CURRENTLY, NO ONGOING AUCTION</span>
-                    <hr>
+                    @if ((int) $item->auction?->status === 0)
+                        <hr>
+                        <span class="bid-font3">CURRENTLY, NO ONGOING AUCTION</span>
+                        <hr>
+                    @endif
                     @if ($item->user_id === auth()->user()->id && (int) $item->auction?->status === 0)
                         <button class="btn btn-start-auction"
                                 data-bs-toggle="modal"
@@ -151,7 +153,8 @@
                             id="current-bid-amount">
                             {{ $currentBid?->bid_amount ? number_format($currentBid->bid_amount ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' : 'No current bids' }}
                         </h1>
-                        <div class="@if ($item->user_id === auth()->user()->id) d-none @endif">
+                        <div class="@if ($item->user_id === auth()->user()->id) d-none @endif"
+                             id="bid-container">
                             <br>
                             <input class="form-control bid-input"
                                    id="bid-amount"
@@ -159,9 +162,17 @@
                                    aria-label="bid"
                                    aria-describedby="ba2"
                                    placeholder="{{ number_format($item->auction->initial_price ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' }} or higher">
-                            <button class="btn btn-bid"
+                            <button class="btn btn-danger d-flex align-items-center py-3 px-4 mt-3 "
                                     id="place-bid"
-                                    type="button">Place bid</button>
+                                    type="button"
+                                    style="border-radius: 0px">
+                                Place bid
+                                <div class="spinner-border text-light ms-1 d-none"
+                                     role="status"
+                                     style="width: 20px; height:20px">
+                                    <span class="sr-only">Loading. ..</span>
+                                </div>
+                            </button>
                         </div>
                         <hr>
                         <h5 class="text-center">Closes in {{ $item->auction?->endTimeFormat() ?? null }}</h5>
