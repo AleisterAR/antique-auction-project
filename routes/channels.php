@@ -1,5 +1,6 @@
 <?php
 
+use App\Broadcasting\BidItemChannel;
 use Illuminate\Support\Facades\Broadcast;
 
 /*
@@ -18,6 +19,5 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
 });
 
 
-Broadcast::channel('bids.{auctionId}', function () {
-    return true;
-});
+Broadcast::channel('bids.{auctionId}', BidItemChannel::class);
+

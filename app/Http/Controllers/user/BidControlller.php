@@ -42,7 +42,6 @@ class BidControlller extends Controller
             $data = array_merge($request->only(['auction_id', 'bid_amount']), ['bid_time' => now(), 'user_id' => $request->user()->id]);
             $bid = $this->bidRepository->store($data);
             BidItem::dispatch($bid);
-            $bid->load('user');
             if ($request->wantsJson()) {
                 return response()->json($bid);
             }

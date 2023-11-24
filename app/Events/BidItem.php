@@ -39,9 +39,17 @@ class BidItem implements ShouldBroadcast
     public function broadcastWith(): array
     {
         return [
-            'max' => $this->bid->bid_amount,
             'current_bid' => $this->bid,
-            'topFiveBids' => $this->bid->query()->with('user')->orderBy('bid_amount', 'desc')->limit(5)->get(),
+            'topFiveBids' => $this->bid->query()
+                ->select(['bid_time', 'bid_amount', 'user_id'])
+                ->with([
+                    'user' => function ($query) {
+                        $query->select('id', 'full_name', 'user_name');
+                    }
+                ])
+                ->orderByDesc('bid_amount')
+                ->take(5)
+                ->get()
         ];
     }
 }
