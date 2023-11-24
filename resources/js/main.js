@@ -17,7 +17,6 @@ document.querySelector('#btn-sign').addEventListener('click', function (e) {
         window.location.reload()
 
     }).catch(error => {
-        console.log(error)
         if (error.response.status === 422) {
             const validationErrors = error.response.data.errors
             for (let key in validationErrors) {
@@ -64,5 +63,11 @@ document.querySelector('#btn-sign-up').addEventListener('click', function (e) {
 document.querySelector('#auction-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const formData = new FormData(e.target)
-    alert()
+    axios.post('/auction', formData).then(res => {
+        console.log(res)
+    }).catch(error => {
+        if(error.response.status === 422) {
+            console.log(error.response.data)
+        }
+    })
 })

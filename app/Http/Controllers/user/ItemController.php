@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\AuctionRequest;
 use App\Repository\User\AuctionRepository;
+use App\Repository\User\BidRepository;
 use App\Repository\User\CategoryRepository;
 use App\Repository\User\ItemRepository;
 use App\Repository\User\ProvenanceRepository;
@@ -21,17 +22,20 @@ class ItemController extends Controller
     protected $provenanceRepository;
     protected $categoryRepository;
     protected $auctionRepository;
+    protected $bidRepository;
 
     public function __construct(
         ItemRepository $itemRepository,
         ProvenanceRepository $provenanceRepository,
         CategoryRepository $categoryRepository,
         AuctionRepository $auctionRepository,
+        BidRepository $bidRepository,
     ) {
         $this->itemRepository = $itemRepository;
         $this->provenanceRepository = $provenanceRepository;
         $this->categoryRepository = $categoryRepository;
         $this->auctionRepository = $auctionRepository;
+        $this->bidRepository = $bidRepository;
     }
 
     public function create()
@@ -78,15 +82,16 @@ class ItemController extends Controller
     {
         $item = $this->itemRepository->findById($id);
         if ($item->auction()->exists()) {
+            $currentBid = $this->bidRepository->currentBid($request->user()->id, $item->auction->id);
             $startTime = $item->auction->start_time;
             $endTime = $item->endTime;
-
+            $item->auction->load('topFiveBids.user');
             if ($endTime <= now()) {
-                $this->auctionRepository->update(['status' => config('global.auction.staus.completed.value')]);
-            } elseif ($startTime >= now()) {
-                $this->auctionRepository->update(['status' => config('global.auction.staus.started.value')]);
+                $this->auctionRepository->update(['status' => config('global.auction_status.completed.value')]);
+            } elseif ($startTime <= now()) {
+                $this->auctionRepository->update(['status' => config('global.auction_status.started.value')]);
             }
         }
-        return view('user.item.show', compact('item'));
+        return view('user.item.show', compact('item', 'currentBid'));
     }
 }

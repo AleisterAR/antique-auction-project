@@ -5,6 +5,7 @@ namespace App\Events;
 use App\Models\Auction;
 use App\Models\Bid;
 use App\Models\Item;
+use Carbon\Carbon;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -20,7 +21,7 @@ class BidItem implements ShouldBroadcast
     /**
      * Create a new event instance.
      */
-    public function __construct(public Auction $auction)
+    public function __construct(public Bid $bid)
     {
         //
     }
@@ -32,13 +33,15 @@ class BidItem implements ShouldBroadcast
      */
     public function broadcastOn(): Channel
     {
-        return new PrivateChannel('bids.' . $this->auction->id);
+        return new PrivateChannel('bids.' . $this->bid->auction_id);
     }
 
     public function broadcastWith(): array
     {
         return [
-            'max' => Bid::where('auction_id', $this->auction->id)->max('bid_amount')
+            'max' => $this->bid->bid_amount,
+            'current_bid' => $this->bid,
+            'topFiveBids' => $this->bid->query()->with('user')->orderBy('bid_amount', 'desc')->limit(5)->get(),
         ];
     }
 }

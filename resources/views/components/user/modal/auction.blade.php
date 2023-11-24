@@ -47,7 +47,7 @@
                                for="photo">Initial Price</label>
                         <div class="input-group mlm">
                             <input class ="form-control"
-                                   name="start_price"
+                                   name="initial_price"
                                    type="text"
                                    placeholder="Initial Price for Antique">
                         </div>

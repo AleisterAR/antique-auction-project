@@ -16,7 +16,7 @@ class AuctionRepository
 
     public function store($data): Auction
     {
-        return $this->model::create($data);
+        return $this->model::updateOrCreate(['item_id' => $data['item_id']], $data);
     }
 
     public function update($data)

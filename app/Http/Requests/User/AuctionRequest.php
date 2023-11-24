@@ -23,10 +23,9 @@ class AuctionRequest extends FormRequest
     {
         if ($this->isMethod('POST')) {
             return [
-                'title' => 'required',
-                'start_date' => ['required', 'date'],
-                'end_date' => ['required', 'date', 'after:start_date'],
-                'current_bid' => ['required', 'numeric']
+                'start_time' => ['required', 'date'],
+                'end_time' => ['required', 'date', 'after:start_date'],
+                'initial_price' => ['required', 'numeric']
             ];
         }
         return [];

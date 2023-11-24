@@ -3,6 +3,7 @@
 use App\Events\BidItem;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\User\AuctionController;
+use App\Http\Controllers\User\BidControlller;
 use App\Http\Controllers\User\ItemController;
 use App\Models\Item;
 use Illuminate\Support\Facades\Route;
@@ -36,4 +37,5 @@ Route::post('/item/store', [ItemController::class, 'store'])->name('user.item.st
 Route::group(['middleware'  => ['auth']], function () {
     Route::get('/item/{id}', [ItemController::class, 'show'])->name('user.item.show');
     Route::post('/auction', [AuctionController::class, 'store'])->name('item.auction.store');
+    Route::post('/bid', [BidControlller::class, 'store'])->name('user.bid.store');
 });

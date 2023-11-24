@@ -139,43 +139,50 @@
                     <hr>
                     <span class="bid-font3">CURRENTLY, NO ONGOING AUCTION</span>
                     <hr>
-                    @if ($item->user_id === auth()->user()->id)
+                    @if ($item->user_id === auth()->user()->id && (int) $item->auction?->status === 0)
                         <button class="btn btn-start-auction"
                                 data-bs-toggle="modal"
                                 data-bs-target="#StartAuction"
                                 type="button">Start Auction</button>
                     @endif
-                    <div class="d-none">
+                    <div class="@if (!$item->auction || $item->auction?->status === 0) d-none @endif">
                         <span class="bid-font1">CURRENT BID</span>
-                        <h1 class="bid-font2">€ 850</h1>
-                        <br>
-                        <input class="form-control bid-input"
-                               type="search"
-                               aria-label="Search"
-                               aria-describedby="ba2"
-                               placeholder="€ 950 or higher">
-                        <button class="btn btn-bid"
-                                type="button">Place bid</button>
+                        <h1 class="bid-font2"
+                            id="current-bid-amount">
+                            {{ $currentBid?->bid_amount ? number_format($currentBid->bid_amount ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' : 'No current bids' }}
+                        </h1>
+                        <div class="@if ($item->user_id === auth()->user()->id) d-none @endif">
+                            <br>
+                            <input class="form-control bid-input"
+                                   id="bid-amount"
+                                   type="text"
+                                   aria-label="bid"
+                                   aria-describedby="ba2"
+                                   placeholder="{{ number_format($item->auction->initial_price ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' }} or higher">
+                            <button class="btn btn-bid"
+                                    id="place-bid"
+                                    type="button">Place bid</button>
+                        </div>
                         <hr>
-                        <h5 class="text-center">Closes in 9h 29m 15s</h5>
+                        <h5 class="text-center">Closes in {{ $item->auction?->endTimeFormat() ?? null }}</h5>
                         <hr>
                         <table class="table table-borderless">
-                            <tbody>
-                                <tr>
-                                    <th class="bid-tr latest-bidder">User1</th>
-                                    <th class="bid-tr latest-bidder">1 day ago</th>
-                                    <th class="bid-tr bid-price latest-bidder">€ 850</th>
-                                </tr>
-                                <tr>
-                                    <td class="bid-tr">User2</td>
-                                    <td class="bid-tr">1 day ago</td>
-                                    <td class="bid-tr bid-price">€ 625</td>
-                                </tr>
-                                <tr>
-                                    <td class="bid-tr">User3</td>
-                                    <td class="bid-tr">2 day ago</td>
-                                    <td class="bid-tr bid-price">€ 440</td>
-                                </tr>
+                            <tbody id="bid-users">
+                                @forelse ($item->auction->topFiveBids ?? [] as $bid)
+                                    <tr>
+                                        <th class="bid-tr latest-bidder">{{ $bid->user->full_name }}</th>
+                                        <th class="bid-tr latest-bidder">{{ $bid->bidDateDiffForHumans() }}</th>
+                                        <th class="bid-tr bid-price latest-bidder">
+                                            {{ number_format($bid->bid_amount, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' }}
+                                        </th>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="100%">
+                                            No current bids.
+                                        </td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
@@ -278,5 +285,8 @@
 @endsection
 
 @section('script')
+    <script>
+        var $auctionId = {!! json_encode($item->auction->id ?? null) !!}
+    </script>
     @vite('resources/js/front/item-detail.js')
 @endsection
