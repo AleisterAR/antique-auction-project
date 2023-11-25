@@ -685,6 +685,40 @@ textarea.form-cus-lg {
     line-height: 1.2857142857;
 }
 
+.about-us-container{
+    padding-left: 55px;
+    padding-right: 55px;
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+.about-us-description{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: 1.075rem;
+    font-weight: 400;
+    line-height: 1.2857142857;
+}
+
+.smaller-about-us-description{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: .895rem;
+    font-weight: 400;
+    line-height: 1.2857142857;
+    color: #6c757d;
+}
+
+.about-us-icon-title{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: 1.425rem;
+    font-weight: 400;
+    line-height: 1.2857142857;
+}
+
+.about-us-icons{
+    color: #DE3C1C;
+    font-size: 35px;
+}
+
 .item-description{
     font-family: "Basis Grotesque Arabic Pro",sans-serif;
     font-size: 1.0625rem;
@@ -771,4 +805,23 @@ textarea.form-cus-lg {
 
 .verified-item-icon{
     color: forestgreen;
+}
+
+.lil-bro-be-flexing{
+    background-color: #222222;
+    color: white;
+}
+
+.num-font-for-lilbro{
+    font-family: "Basis Grotesque Arabic Pro",monospace;
+    font-size: 3.7775rem;
+    font-weight: 500;
+    letter-spacing: .0625rem;
+}
+
+.font-for-lilbro{
+    font-family: "Basis Grotesque Arabic Pro",monospace;
+    font-size: 2.375rem;
+    font-weight: 500;
+    letter-spacing: .0625rem;
 }

@@ -1,4 +1,4 @@
-if ($auctionId) {
+if (true) {
     const currentBitAmount = document.querySelector('#current-bid-amount')
     const bidUser = document.querySelector('#bid-users')
     if ($topfiveBid) {

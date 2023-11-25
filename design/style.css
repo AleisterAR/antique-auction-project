@@ -10,8 +10,12 @@
     padding-right: 0.5rem;
 }
 
+.nav-space-last{
+    padding-right: 38px;
+}
+
 .nav-space-searchbar{
-    padding-right: 35px;
+    padding-right: 50px;
 }
 
 .cus-link {
@@ -44,8 +48,8 @@
 
 .cus-brand {
     padding-bottom: 6px;
-    margin-left: 3.05rem;
-    margin-right: 3rem;
+    margin-left: 45px;
+    margin-right: 50px;
     font-size: 1.75rem;
     text-decoration: none;
     white-space: nowrap;
@@ -344,10 +348,15 @@
     padding-top: 7px;
 }
 
+.li-after-sign-in{
+    padding-top: 10px;
+    padding-left: 25px;
+}
+
 .btn-submit{
     width: 45%;
-    border-color: white;
-    border-style: none;
+    height: 45px;
+    border: solid white ;
 }
 
 .btn-submit-color {
@@ -360,6 +369,22 @@
     color: #DE3C1C;
     text-decoration: none;
     border-color: #DE3C1C;
+}
+
+.btn-user-icon{
+    color: white;
+    background-color: #DE3C1C;
+}
+
+.btn-user-icon:hover {
+    background-color: white;
+    color: #DE3C1C;
+    text-decoration: none;
+    border-color: #DE3C1C;
+}
+
+.dropdown-cus{
+    border-radius: 0;
 }
 
 .textarea-size {
@@ -590,3 +615,160 @@ textarea.form-cus-lg {
     text-decoration: underline #DE3C1C;
 }
 
+.item-title-detail{
+    font-family: "FreightBigProBook-Regular",serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.item-detail-container-box{
+    padding-left: 58px;
+    padding-right: 48px;
+}
+
+.item-detail-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.item-detail-left{
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 7px;
+    transition: .4s;
+    margin-left: -90px;
+}
+
+.item-detail-img{
+    width: 100%;
+    margin: 0 30px 15px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.item-bid-box{
+    border-top: 2px #DE3C1C solid;
+    border-left: 1px #D2D9E1 solid;
+    border-right: 1px #D2D9E1 solid;
+    border-bottom: 1px #D2D9E1 solid;
+    transition: .4s;
+    background: white;
+    padding: 20px 20px;
+    margin: 17px 0 50px 20px;
+}
+
+.bid-font1{
+    font-family: "Basis Grotesque Arabic Pro",monospace;
+    font-size: .625rem;
+    font-weight: 400;
+    letter-spacing: .05625rem;
+    line-height: 1.2;
+}
+
+.bid-font2{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+    line-height: 1.2777777778;
+}
+
+.bid-font3{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.2857142857;
+}
+
+.item-description{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.4705882353;
+    font-weight: bold;
+}
+
+.bid-input{
+    color: black;
+    background-color: #D2D9E1;
+    border: white 0.025rem solid;
+    border-radius: 0px;
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    height: 50px;
+}
+
+.bid-input::placeholder{
+    color: dimgray;
+}
+
+.bid-input:focus{
+    color: #DE3C1C;
+    background-color: #D2D9E1;
+    border: #DE3C1C 1px solid;
+    border-radius: 0px;
+    box-shadow: 0 0 0 0;
+}
+
+.btn-bid{
+    margin-top: 15px;
+    border: 0.0625rem solid #d2d9e1;
+    height: 3.25rem;
+    width: 112px;
+    text-align: center;
+    border-radius: 0;
+    color: white;
+    background-color: #DE3C1C;
+}
+
+.btn-bid:hover{
+    color: #DE3C1C;
+    border: #DE3C1C 1px solid;
+}
+
+.btn-start-auction{
+    margin-top: 15px;
+    border: #DE3C1C 1px solid;
+    height: 3.25rem;
+    width: 130px;
+    text-align: center;
+    border-radius: 0;
+    color: #DE3C1C;
+    background-color: white;
+}
+
+.btn-start-auction:hover{
+    color: white;
+    border: 0.0625rem solid #d2d9e1;
+    background-color: #DE3C1C;
+}
+.latest-bidder{
+    font-weight: 700;
+}
+
+.bid-tr{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: .8125rem;
+    line-height: 1.2307692308;
+    color:#565b60;
+}
+
+.bid-price{
+    text-align: right;
+}
+
+.item-detail-title{
+    font-family: "Basis Grotesque Arabic Pro",monospace;
+    font-size: .7775rem;
+    font-weight: 500;
+    letter-spacing: .0625rem;
+    color: #565b60;
+    text-transform: uppercase;
+}
+
+.verified-item-icon{
+    color: forestgreen;
+}

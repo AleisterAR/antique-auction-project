@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\User;
 
 use Throwable;
 use Illuminate\Http\Request;
@@ -80,6 +80,7 @@ class ItemController extends Controller
 
     public function show(Request $request, $id)
     {
+        $currentBid = null;
         $item = $this->itemRepository->findById($id);
         if ($item->auction()->exists()) {
             $currentBid = $this->bidRepository->currentBid($request->user()->id, $item->auction->id);
@@ -89,6 +90,7 @@ class ItemController extends Controller
             if ($endTime <= now()) {
                 $this->auctionRepository->update(['status' => config('global.auction_status.completed.value')]);
             } elseif ($startTime <= now()) {
+
                 $this->auctionRepository->update(['status' => config('global.auction_status.started.value')]);
             }
         }
