@@ -64,7 +64,7 @@ document.querySelector('#auction-form').addEventListener('submit', function (e) 
     e.preventDefault();
     const formData = new FormData(e.target)
     axios.post('/auction', formData).then(res => {
-        console.log(res)
+        window.location.href = window.location.pathname
     }).catch(error => {
         if(error.response.status === 422) {
             console.log(error.response.data)

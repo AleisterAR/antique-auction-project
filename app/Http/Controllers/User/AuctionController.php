@@ -32,7 +32,7 @@ class AuctionController extends Controller
         ]), [
             'item_id' => $item->id,
             'user_id' => $user->id,
-            'status' => $request->start_time >= now() ? config('global.auction_status.started.value') : config('global.auction_status.pending.value'),
+            'status' => $request->start_time <= now() ? config('global.auction_status.started.value') : config('global.auction_status.pending.value'),
         ]);
 
         $autction = $this->auctionRepository->store($data);

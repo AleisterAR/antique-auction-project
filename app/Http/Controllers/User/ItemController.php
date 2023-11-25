@@ -82,6 +82,7 @@ class ItemController extends Controller
     {
         $currentBid = null;
         $item = $this->itemRepository->findById($id);
+        $currentBid = null;
         if ($item->auction()->exists()) {
             $currentBid = $this->bidRepository->currentBid($request->user()->id, $item->auction->id);
             $startTime = $item->auction->start_time;
