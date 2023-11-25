@@ -81,6 +81,7 @@ class ItemController extends Controller
     public function show(Request $request, $id)
     {
         $item = $this->itemRepository->findById($id);
+        $currentBid = null;
         if ($item->auction()->exists()) {
             $currentBid = $this->bidRepository->currentBid($request->user()->id, $item->auction->id);
             $startTime = $item->auction->start_time;
