@@ -810,18 +810,21 @@ textarea.form-cus-lg {
 .lil-bro-be-flexing{
     background-color: #222222;
     color: white;
+    padding-top: 65px;
+    padding-bottom: 80px;
 }
 
 .num-font-for-lilbro{
     font-family: "Basis Grotesque Arabic Pro",monospace;
-    font-size: 3.7775rem;
+    font-size: 42px;
     font-weight: 500;
     letter-spacing: .0625rem;
 }
 
 .font-for-lilbro{
-    font-family: "Basis Grotesque Arabic Pro",monospace;
-    font-size: 2.375rem;
+    font-family: "Basis Grotesque Arabic Pro",serif;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: .0625rem;
 }
+

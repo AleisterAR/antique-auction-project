@@ -145,19 +145,28 @@
                 <span class="num-font-for-lilbro">
                     1500
                 </span><br>
-                <span>
+                <span class="font-for-lilbro">
                     Items Registered
                 </span>
+                <hr class="rizz-line">
                 </div>
                 <div class="col-md-4 col-12">
                 <span class="num-font-for-lilbro">
-                    Hello
+                    750
+                </span><br>
+                <span class="font-for-lilbro">
+                    Successful Auctions
                 </span>
+                    <hr class="rizz-line">
                 </div>
                 <div class="col-md-4 col-12">
                 <span class="num-font-for-lilbro">
-                    Hello
+                    3500
+                </span><br>
+                    <span class="font-for-lilbro">
+                    Registered Accounts
                 </span>
+                    <hr class="rizz-line">
                 </div>
             </div>
         </div>
