@@ -707,6 +707,31 @@ textarea.form-cus-lg {
     color: #6c757d;
 }
 
+.contacts-description{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: .945rem;
+    font-weight: 400;
+    line-height: 1.2857142857;
+    color: #6c757d;
+}
+
+.contacts-link{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: .9845rem;
+    font-weight: 400;
+    line-height: 1.2857142857;
+    color: #DE3C1C;
+    text-decoration: none;
+}
+
+.contacts-link:hover{
+    color: rgb(128, 128, 128);
+}
+
+.contacts-link-position{
+    padding-top: 10px;
+}
+
 .about-us-icon-title{
     font-family: "Basis Grotesque Arabic Pro",sans-serif;
     font-size: 1.425rem;
@@ -828,3 +853,16 @@ textarea.form-cus-lg {
     letter-spacing: .0625rem;
 }
 
+.contacts-map{
+    width: 100%;
+    height: 650px;
+}
+
+.contacts-form-title{
+    font-size: 2.25rem;
+    color: #6c757d;
+}
+
+.form-label{
+    color: #6c757d;
+}
