@@ -76,18 +76,39 @@ if ($auctionId) {
                 text: "Start the bidding by entering your offer!",
             });
         }
+
+        const bid = Number(bidAmount.value) - Number($currentBid)
+
+        if (!(bid >= 50)) {
+            return Swal.fire({
+                icon: "warning",
+                title: "Oops...",
+                text: "Your bid must exceed the initial price and current bid by at least $50",
+            });
+        }
+
         bidInput.classList.add('disabled')
         bidButton.classList.add('disabled')
         bidSpinner.classList.remove('d-none')
         axios.post('/bid', { bid_amount: bidAmount.value, auction_id: $auctionId }).then(res => {
             bidAmount.value = '';
         }).catch(error => {
-            console.log(error)
+            if (error.response.status === 422) {
+                const errors = error.response.data.errors
+                if ('bid_amount' in errors) {
+                    return Swal.fire({
+                        icon: "warning",
+                        title: "Oops...",
+                        text: "Your bid must exceed the initial price and current bid by at least $50",
+                    });
+                }
+            }
         }).finally(() => {
             bidInput.classList.remove('disabled')
             bidButton.classList.remove('disabled')
             bidSpinner.classList.add('d-none')
         })
+
     })
 }
 
