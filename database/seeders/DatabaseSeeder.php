@@ -40,6 +40,14 @@ class DatabaseSeeder extends Seeder
                 'address' => 'address',
                 'phone_number' => '123456789',
                 'password' =>   bcrypt('password')
+            ],
+            [
+                'user_name' => 'use2',
+                'email' => 'user2@test.com',
+                'full_name' => 'user2',
+                'address' => 'address',
+                'phone_number' => '123456789',
+                'password' =>   bcrypt('password')
             ]
         ];
 
