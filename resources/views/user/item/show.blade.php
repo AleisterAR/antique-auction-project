@@ -145,7 +145,8 @@
                         <button class="btn btn-start-auction"
                                 data-bs-toggle="modal"
                                 data-bs-target="#StartAuction"
-                                type="button">Start Auction</button>
+                                type="button"
+                                @disabled($item->status === 0)>Start Auction</button>
                     @endif
                     <div class="@if (!$item->auction || $item->auction?->status === 0) d-none @endif">
                         <span class="bid-font1">CURRENT BID</span>
@@ -217,8 +218,11 @@
                         <span class="item-detail-title">Year</span><br>
                         <span class="item-description">{{ $item->provenance->year }}</span><br><br>
                         <span class="item-detail-title">Verification Status</span><br>
-                        <span class="item-description">Verified <i
-                               class="bi bi-check2-circle verified-item-icon"></i></span><br><br>
+                        <span class="item-description">
+                            @if ($item->status === 1)
+                                Verified <i class="bi bi-check2-circle verified-item-icon"></i>
+                            @endif
+                        </span><br><br>
                     </div>
                 </div>
                 <span class="item-detail-title">Description</span>
@@ -299,6 +303,7 @@
     <script>
         var $auctionId = {!! json_encode($item->auction->id ?? null) !!};
         var $topfiveBid = {!! json_encode($item->auction->topFiveBids ?? null) !!};
+        var $currentBid = {!! json_encode($item->auction?->topFiveBids->first()['bid_amount'] ?? ($item->auction->initial_price ?? null)) !!}
     </script>
     @vite('resources/js/front/item-detail.js')
 @endsection

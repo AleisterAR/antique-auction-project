@@ -108,7 +108,7 @@
                                                     @endforeach
                                                 </td>
                                                 <td>
-                                                    <button @role('admin') disabled @endrole  data-bs-toggle="dropdown"
+                                                    <button @cannot('verify item') disabled  @endcannot  data-bs-toggle="dropdown"
                                                             type="button"
                                                             aria-expanded="false"
                                                             @class([

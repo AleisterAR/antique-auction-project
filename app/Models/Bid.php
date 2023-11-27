@@ -20,4 +20,8 @@ class Bid extends Model
     {
         return Carbon::parse($this->bid_time)->diffForHumans();
     }
+
+    public function auction(){
+        return  $this->belongsTo(Auction::class);
+    }
 }

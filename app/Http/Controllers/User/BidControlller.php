@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Events\BidItem;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BidRequest;
 use App\Repository\User\BidRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -36,7 +37,7 @@ class BidControlller extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BidRequest $request)
     {
         try {
             $data = array_merge($request->only(['auction_id', 'bid_amount']), ['bid_time' => now(), 'user_id' => $request->user()->id]);

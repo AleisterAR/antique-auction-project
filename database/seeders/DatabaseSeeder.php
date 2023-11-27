@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
@@ -39,16 +40,25 @@ class DatabaseSeeder extends Seeder
                 'address' => 'address',
                 'phone_number' => '123456789',
                 'password' =>   bcrypt('password')
+            ],
+            [
+                'user_name' => 'use2',
+                'email' => 'user2@test.com',
+                'full_name' => 'user2',
+                'address' => 'address',
+                'phone_number' => '123456789',
+                'password' =>   bcrypt('password')
             ]
         ];
 
         foreach ($users as $user) {
             User::query()->create($user);
         }
-
         Role::query()->create(['name' => 'admin']);
-        Role::query()->create(['name' => 'expert']);
-        
+        Role::query()->create(['name' => 'expert'])
+            ->permissions()->create(['name' => 'verify item']);
+
+
         $user = User::query()->first();
         $user->assignRole(Role::get());
 

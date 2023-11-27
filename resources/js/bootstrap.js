@@ -30,7 +30,7 @@ dayjs.updateLocale('en', {
     relativeTime: {
       future: "in %s",
       past: "%s",
-      s: '1 minute',
+      s: 'a few second',
       m: "1 minute",
       mm: "%d minutes",
       h: "1 hour",
