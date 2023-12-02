@@ -142,30 +142,30 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-4 col-12">
-                <span class="num-font-for-lilbro">
-                    1500
-                </span><br>
-                <span class="font-for-lilbro">
-                    Items Registered
-                </span>
-                <hr class="rizz-line">
-                </div>
-                <div class="col-md-4 col-12">
-                <span class="num-font-for-lilbro">
-                    750
-                </span><br>
-                <span class="font-for-lilbro">
-                    Successful Auctions
-                </span>
+                    <span class="num-font-for-lilbro">
+                        {{ $itemCount }}
+                    </span><br>
+                    <span class="font-for-lilbro">
+                        Items Registered
+                    </span>
                     <hr class="rizz-line">
                 </div>
                 <div class="col-md-4 col-12">
-                <span class="num-font-for-lilbro">
-                    3500
-                </span><br>
+                    <span class="num-font-for-lilbro">
+                        {{ $auctionCount }}
+                    </span><br>
                     <span class="font-for-lilbro">
-                    Registered Accounts
-                </span>
+                        Successful Auctions
+                    </span>
+                    <hr class="rizz-line">
+                </div>
+                <div class="col-md-4 col-12">
+                    <span class="num-font-for-lilbro">
+                        {{ $userCount }}
+                    </span><br>
+                    <span class="font-for-lilbro">
+                        Registered Accounts
+                    </span>
                     <hr class="rizz-line">
                 </div>
             </div>
@@ -193,7 +193,8 @@
                 </span>
                 <br>
                 <span class="smaller-about-us-description">
-                    Backed by a team of seasoned experts and historians, Timeless Treasuria Auctions ensures the authenticity,
+                    Backed by a team of seasoned experts and historians, Timeless Treasuria Auctions ensures the
+                    authenticity,
                     provenance, and value of every item in our collection. Our dedication to transparency and knowledge
                     sets us apart, offering our clients a trusted and reliable platform to explore, bid, and acquire
                     extraordinary pieces with confidence.
@@ -281,4 +282,3 @@
         </div>
     </footer>
 @endsection
-
