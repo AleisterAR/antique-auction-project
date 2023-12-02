@@ -832,6 +832,10 @@ textarea.form-cus-lg {
     color: forestgreen;
 }
 
+.unverified-item-icon{
+    color: darkred;
+}
+
 .lil-bro-be-flexing{
     background-color: #222222;
     color: white;
@@ -865,4 +869,9 @@ textarea.form-cus-lg {
 
 .form-label{
     color: #6c757d;
+}
+
+.cus-card{
+    border-radius: 0;
+    border-color: white;
 }
