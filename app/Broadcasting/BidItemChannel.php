@@ -19,6 +19,7 @@ class BidItemChannel
      */
     public function join(User $user): array|bool
     {
-        return !is_null($user);
+        info('Hello Ko Wai');
+        return true;
     }
 }

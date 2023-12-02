@@ -33,6 +33,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('user.logout');
 
 Route::get('/item/create', [ItemController::class, 'create'])->name('user.item.create');
 Route::post('/item/store', [ItemController::class, 'store'])->name('user.item.store');
+Route::get('/front/aboutus', [\App\Http\Controllers\User\AboutUsController::class, '__invoke'])->name('front.aboutus');
+Route::get('/front/contacts', [\App\Http\Controllers\User\ContactsController::class, '__invoke'])->name('front.contacts');
+Route::get('/item/info', [\App\Http\Controllers\User\ItemInfoController::class, '__invoke'])->name('user.item.info');
 
 Route::group(['middleware'  => ['auth']], function () {
     Route::get('/item/{id}', [ItemController::class, 'show'])->name('user.item.show');
