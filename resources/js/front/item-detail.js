@@ -1,4 +1,34 @@
-if (true) {
+if ($startTime) {
+    const currentDate = new Date();
+    const futureDate = new Date($startTime);
+    const timeDifference = futureDate.getTime() - currentDate.getTime();
+
+    if (timeDifference > 0) {
+        setTimeout(function () {
+            alert('Auction is stared')
+            window.location.reload()
+        }, timeDifference);
+    } else {
+        console.log('The specified time has already passed.');
+    }
+}
+
+if ($endTime) {
+    const currentDate = new Date();
+    const futureDate = new Date($endTime);
+    const timeDifference = futureDate.getTime() - currentDate.getTime();
+
+    if (timeDifference > 0) {
+        setTimeout(function () {
+            alert('Auction is finished')
+            window.location.reload()
+        }, timeDifference);
+    } else {
+        console.log('The specified time has already passed.');
+    }
+}
+
+if ($auctionId) {
     const currentBitAmount = document.querySelector('#current-bid-amount')
     const bidUser = document.querySelector('#bid-users')
     if ($topfiveBid) {
@@ -29,16 +59,18 @@ if (true) {
 
     Echo.private(`bids.${$auctionId}`)
         .listen('BidItem', (data) => {
-            console.log(data)
-            $topfiveBid = data.topFiveBids
-            currentBitAmount.innerText = `${new Intl.NumberFormat('de-DE', {
-                style: 'currency',
-                currency: 'EUR',
-                currencyDisplay: 'symbol',
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 2,
-            }).format(Number(data.topFiveBids[0]['bid_amount'])).toString().replace(/\./g, ',')
+            const topBid =
+                `${new Intl.NumberFormat('de-DE', {
+                    style: 'currency',
+                    currency: 'EUR',
+                    currencyDisplay: 'symbol',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 2,
+                }).format(Number(data.topFiveBids[0]['bid_amount'])).toString().replace(/\./g, ',')
                 }`
+            document.querySelector('#bid-amount').setAttribute('placeholder', topBid + ' or higher')
+            $topfiveBid = data.topFiveBids
+            currentBitAmount.innerText = topBid
             const h = data.topFiveBids?.map(bid => {
                 return `
                 <tr>

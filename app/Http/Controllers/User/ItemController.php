@@ -86,7 +86,7 @@ class ItemController extends Controller
         if ($item->auction()->exists()) {
             $currentBid = $this->bidRepository->currentBid($request->user()->id, $item->auction->id);
             $startTime = $item->auction->start_time;
-            $endTime = $item->endTime;
+            $endTime = $item->auction->end_time;
             $item->auction->load('topFiveBids.user');
             if ($endTime <= now()) {
                 $this->auctionRepository->update(['status' => config('global.auction_status.completed.value')]);

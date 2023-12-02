@@ -162,7 +162,7 @@
                                    type="text"
                                    aria-label="bid"
                                    aria-describedby="ba2"
-                                   placeholder="{{ number_format($item->auction->initial_price ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' }} or higher">
+                                   placeholder="{{ number_format($item->auction?->topFiveBids->first()['bid_amount'] ?? ($item->auction->initial_price ?? 0), $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' }} or higher">
                             <button class="btn btn-danger d-flex align-items-center py-3 px-4 mt-3 "
                                     id="place-bid"
                                     type="button"
@@ -303,8 +303,10 @@
 
 @section('script')
     <script>
-        var $auctionId = {!! json_encode($item->auction->id ?? null) !!};
-        var $topfiveBid = {!! json_encode($item->auction->topFiveBids ?? null) !!};
+        var $startTime = {!! json_encode($item->auction?->start_time ?? null) !!}
+        var $endTime = {!! json_encode($item->auction?->end_time ?? null) !!}
+        var $auctionId = {!! json_encode($item->auction?->id ?? null) !!};
+        var $topfiveBid = {!! json_encode($item->auction?->topFiveBids ?? null) !!};
         var $currentBid = {!! json_encode($item->auction?->topFiveBids->first()['bid_amount'] ?? ($item->auction->initial_price ?? null)) !!}
     </script>
     @vite('resources/js/front/item-detail.js')

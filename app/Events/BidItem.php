@@ -47,6 +47,7 @@ class BidItem implements ShouldBroadcast
                         $query->select('id', 'full_name', 'user_name');
                     }
                 ])
+                ->where('auction_id', $this->bid->auction_id)
                 ->orderByDesc('bid_amount')
                 ->take(5)
                 ->get()
