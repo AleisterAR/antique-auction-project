@@ -89,8 +89,10 @@ class ItemController extends Controller
             $item->auction->load('topFiveBids.user');
             if ($endTime <= now()) {
                 $this->auctionRepository->update(['status' => config('global.auction_status.completed.value')]);
+                $item->auction->refresh();
             } elseif ($startTime <= now()) {
                 $this->auctionRepository->update(['status' => config('global.auction_status.started.value')]);
+                $item->auction->refresh();
             }
         }
         return view('user.item.show', compact('item', 'currentBid'));

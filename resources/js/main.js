@@ -14,7 +14,7 @@ document.querySelector('#btn-sign').addEventListener('click', function (e) {
         if (user.roles?.length && user.roles?.some(r => r.name === 'admin' || r.name === 'expert')) {
             return window.location.pathname = '/admin'
         }
-        window.location.reload()
+        window.location.reload(true)
 
     }).catch(error => {
         if (error.response.status === 422) {

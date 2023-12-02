@@ -154,7 +154,7 @@
                             id="current-bid-amount">
                             {{ $currentBid?->bid_amount ? number_format($currentBid->bid_amount ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' : 'No current bids' }}
                         </h1>
-                        <div class="@if ($item->user_id === auth()->user()->id) d-none @endif"
+                        <div class="@if ($item->user_id === auth()->user()->id || $item->auction?->status === 2) d-none @endif"
                              id="bid-container">
                             <br>
                             <input class="form-control bid-input"
@@ -176,7 +176,14 @@
                             </button>
                         </div>
                         <hr>
-                        <h5 class="text-center">Closes in {{ $item->auction?->endTimeFormat() ?? null }}</h5>
+                        <h5 class="text-center">
+                            @if ($item->auction?->status === 2)
+                                <span>Auction Closed</span>
+                            @else
+                                Closes in <span class="text-sm"
+                                      id="close-in">{{ $item->auction?->endTimeFormat() ?? null }}</span>
+                        </h5>
+                        @endif
                         <hr>
                         <table class="table table-borderless">
                             <tbody id="bid-users">

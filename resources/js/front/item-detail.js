@@ -14,17 +14,48 @@ if ($startTime) {
 }
 
 if ($endTime) {
-    const currentDate = new Date();
-    const futureDate = new Date($endTime);
-    const timeDifference = futureDate.getTime() - currentDate.getTime();
+    const closeIn = document.querySelector('#close-in');
+    // const currentDate = new Date();
+    // const futureDate = new Date($endTime);
+    // const timeDifference = futureDate.getTime() - currentDate.getTime();
 
-    if (timeDifference > 0) {
-        setTimeout(function () {
+    // console.log(timeDifference)
+
+    // if (timeDifference > 0) {
+    //     let endTimeOut = setTimeout(function () {
+    //         alert('Auction is finished')
+    //         window.location.reload()
+    //     }, timeDifference);
+    // } else {
+    //     console.log('The specified time has already passed.');
+    // }
+
+    const timer = setInterval(updateCountdown, 1000)
+
+    function updateCountdown() {
+        const targetDate = new Date($endTime);
+        const currentDate = new Date();
+
+        const difference = targetDate.getTime() - currentDate.getTime();
+
+        if (difference <= 0) {
+            clearInterval(timer); // Stop the timer if the target time has passed
+            console.log("Countdown has ended!");
+            return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        if (days === 0) {
             alert('Auction is finished')
-            window.location.reload()
-        }, timeDifference);
-    } else {
-        console.log('The specified time has already passed.');
+            window.reload(true)
+        }
+
+        closeIn.innerText = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`
+        console.log(`Remaining time: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
     }
 }
 
@@ -106,16 +137,6 @@ if ($auctionId) {
                 icon: "error",
                 title: "Oops...",
                 text: "Start the bidding by entering your offer!",
-            });
-        }
-
-        const bid = Number(bidAmount.value) - Number($currentBid)
-
-        if (!(bid >= 50)) {
-            return Swal.fire({
-                icon: "warning",
-                title: "Oops...",
-                text: "Your bid must exceed the initial price and current bid by at least $50",
             });
         }
 
