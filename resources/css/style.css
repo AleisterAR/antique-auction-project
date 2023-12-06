@@ -48,6 +48,7 @@
 
 .cus-brand {
     padding-bottom: 6px;
+    padding-right: 20px;
     margin-left: 45px;
     margin-right: 50px;
     font-size: 1.75rem;
@@ -55,6 +56,10 @@
     white-space: nowrap;
     font-family: "Margon 380 W08 Regular", serif;
     color: white;
+    border-top: 2px solid transparent;
+    border-right: 1px solid rgba(115,115,115,0.35);
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
 }
 
 .cus-brand:hover{
@@ -874,4 +879,100 @@ textarea.form-cus-lg {
 .cus-card{
     border-radius: 0;
     border-color: white;
+}
+
+.cus-card-body{
+    padding-left: 0;
+}
+
+
+.cus-card-title{
+    font-family: "Basis Grotesque Arabic Pro", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    font-weight: bold;
+    color: #222222;
+}
+
+.cus-card-current-bid{
+    font-family: "Basis Grotesque Arabic Pro",monospace;
+    font-size: .7875rem;
+    font-weight: 400;
+    letter-spacing: .0625rem;
+    line-height: 1.1818181818;
+    margin-top: 0.75rem;
+    text-transform: uppercase;
+    color: #565b60;
+}
+
+.cus-card-bid-amount{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: 1.1875rem;
+    line-height: 1.2631578947;
+    margin-bottom: 20px;
+    color: #222222;
+    font-weight: 600;
+}
+
+.cus-card-timer{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-size: .9375rem;
+    font-weight: 500;
+    line-height: 1.2666666667;
+    color: #919397;
+}
+
+.pagination-btn{
+    background-color: #DE3C1C;
+    height: 52px;
+    width: 190px;
+    color: white;
+    text-align: center;
+}
+
+.cus-page-link{
+    color: #222222;
+    border: 0 transparent;
+}
+
+.cus-page-link:hover{
+    color: #DE3C1C;
+}
+
+.page-item:first-child .cus-page-link {
+    border-radius: 0;
+    background-color: #DE3C1C;
+    color: white;
+}
+
+.page-item:last-child .cus-page-link {
+    border-radius: 0;
+    background-color: #DE3C1C;
+    color: white;
+}
+
+.page-item:first-child .cus-page-link:hover{
+    color: #DE3C1C;
+    background-color: white;
+    border: 1px solid #DE3C1C;
+}
+
+.page-item:last-child .cus-page-link:hover{
+    color: #DE3C1C;
+    background-color: white;
+    border: 1px solid #DE3C1C;
+}
+
+.sort-by-font{
+    font-family: "Basis Grotesque Arabic Pro",sans-serif;
+    font-weight: 590;
+    margin-top: 20px;
+}
+
+.dropdown-toggle-cus{
+    border-style: none;
+    padding-left: 10px;
+    padding-bottom: -15px;
+    background-color: transparent;
+    font-family: "FreightBigProBook-Regular", sans-serif;
 }
