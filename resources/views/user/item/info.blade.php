@@ -66,14 +66,17 @@
                         </li>
                         <li class="nav-item nav-space-searchbar">
                             <form class="d-flex pad_for_s_bar"
-                                  role="search">
+                                  role="search"
+                                  action="{{ route('user.item.info') }}">
                                 <div class="input-group mb-3">
                                     <input class="form-control bg-search-bar"
+                                           name="search"
                                            type="search"
                                            aria-label="Search"
                                            aria-describedby="ba2">
                                     <button class="btn btn-search-bar"
                                             id="ba2"
+                                            type="submit"
                                             type="button">
                                         <i class="bi bi-search"></i>
                                     </button>
@@ -125,20 +128,50 @@
     <div class="container item-detail-container-box">
         <div class="d-flex justify-content-end sort-by-font">
             Sort by <div class="dropdown">
-                <button class="dropdown-toggle dropdown-toggle-cus" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="dropdown-toggle dropdown-toggle-cus"
+                        data-bs-toggle="dropdown"
+                        type="button"
+                        aria-expanded="false">
                     Dropdown button
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><a class="dropdown-item"
+                           href="#">Action</a></li>
+                    <li><a class="dropdown-item"
+                           href="#">Another action</a></li>
+                    <li><a class="dropdown-item"
+                           href="#">Something else here</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container mt-4 item-detail-container-box">
         <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4 col-12">
+            @forelse ($items as $item)
+                <div class="col-lg-3 col-md-6 mb-4 col-12">
+                    <div class="card cus-card">
+                        <img class="card-img-top cus-card"
+                             src="{{ asset('storage/antique/' . $item->image->file_name) }}"
+                             alt="Item 1">
+                        <div class="card-body cus-card-body">
+                            <h5 class="card-title cus-card-title">{{ $item->description }}</h5>
+                            @if ($item->auction?->start_time > now())
+                                <p>No auction</p>
+                            @else
+                                <p class="card-text cus-card-current-bid">Current Bid <br>
+                                    <span
+                                          class="card-text cus-card-bid-amount">{{ $item->auction?->currentBid?->bid_amount ? '€ ' . $item->auction->currentBid->bid_amount : '-' }}</span>
+                                </p>
+                                <p class="card-text cus-card-timer">
+                                    {{ $item->auction?->end_time ? now()->diffInDays($item->auction->end_time) . 'left' : '-' }}
+                                </p>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            @empty
+            @endforelse
+            {{-- <div class="col-lg-3 col-md-6 mb-4 col-12">
                 <div class="card cus-card">
                     <img src="https://placekitten.com/300/200" class="card-img-top cus-card" alt="Item 1">
                     <div class="card-body cus-card-body">
@@ -179,33 +212,25 @@
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 col-12">
-                <div class="card cus-card">
-                    <img src="https://placekitten.com/300/200" class="card-img-top cus-card" alt="Item 1">
-                    <div class="card-body cus-card-body">
-                        <h5 class="card-title cus-card-title">Francesco Zuccarelli (1702 -1788) - River landscape with shepherds </h5>
-                        <p class="card-text cus-card-current-bid">Current Bid <br>
-                            <span class="card-text cus-card-bid-amount">€ 1,500</span>
-                        </p>
-                        <p class="card-text cus-card-timer">
-                            1 day left
-                        </p>
-                    </div>
-                </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="container mt-4">
-        <nav aria-label="Page navigation example">
+        {{ $items->links('vendor.pagination.simple-bootstrap-5') }}
+        {{-- <nav aria-label="Page navigation example">
             <ul class="pagination d-flex justify-content-center">
-                <li class="page-item"><a class="page-link cus-page-link" href="#"><i class="bi bi-caret-left-fill"></i> Previous</a></li>
-                <li class="page-item"><a class="page-link cus-page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link cus-page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link cus-page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link cus-page-link" href="#">Next <i class="bi bi-caret-right-fill"></i></a></li>
+                <li class="page-item"><a class="page-link cus-page-link"
+                       href="#"><i class="bi bi-caret-left-fill"></i> Previous</a></li>
+                <li class="page-item"><a class="page-link cus-page-link"
+                       href="#">1</a></li>
+                <li class="page-item"><a class="page-link cus-page-link"
+                       href="#">2</a></li>
+                <li class="page-item"><a class="page-link cus-page-link"
+                       href="#">3</a></li>
+                <li class="page-item"><a class="page-link cus-page-link"
+                       href="#">Next <i class="bi bi-caret-right-fill"></i></a></li>
             </ul>
-        </nav>
+        </nav> --}}
     </div>
     <footer class="footer">
         <div class="container first-footer">
