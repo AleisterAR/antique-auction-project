@@ -49,10 +49,10 @@ if ($endTime) {
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        if (days === 0) {
-            alert('Auction is finished')
-            window.reload(true)
-        }
+        // if (days === 0) {
+        //     alert('Auction is finished')
+        //     window.reload(true)
+        // }
 
         closeIn.innerText = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`
         console.log(`Remaining time: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
