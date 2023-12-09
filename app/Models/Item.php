@@ -18,6 +18,11 @@ class Item extends Model
         return $this->morphTo();
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     public function images(): MorphMany
     {
         return $this->morphMany(Image::class, 'imageable');

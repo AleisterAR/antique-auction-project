@@ -29,6 +29,10 @@ class Auction extends Model
         return $this->hasMany(Bid::class)->orderBy('bid_amount', 'desc')->take(5);
     }
 
+    public function currentBid(){
+        return $this->hasOne(Bid::class)->orderBy('bid_amount', 'desc')->take(1);
+    }
+
     public function endTimeFormat()
     {
         $date = Carbon::parse($this->end_time);
