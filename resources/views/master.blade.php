@@ -23,6 +23,9 @@
 </head>
 
 <body>
+    <div id="navbar">
+        <x-user.navbar />
+    </div>
     <div id="modal">
         <x-user.modal.login />
         <x-user.modal.register />
@@ -31,6 +34,9 @@
     @vite('resources/js/main.js')
     @yield('content')
     @yield('script')
+    <div id="footer">
+        <x-user.footer />
+    </div>
 </body>
 
 </html>
