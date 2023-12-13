@@ -28,6 +28,19 @@
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
     font-size: 0.9rem;
 }
+.cus-link-button{
+    background-color: #222222;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .cus-link {
         transition: none;
@@ -975,4 +988,20 @@ textarea.form-cus-lg {
     padding-bottom: -15px;
     background-color: transparent;
     font-family: "FreightBigProBook-Regular", sans-serif;
+}
+
+.masthead {
+    background: url('/storage/wallpaperflare.com_wallpaper.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 60vh;
+    color: white;
+}
+
+@media(max-width: 768px)
+{
+    .masthead
+    {
+        min-height: 30vh;
+    }
 }

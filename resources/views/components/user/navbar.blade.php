@@ -54,8 +54,12 @@
                         </ul>
                     </li>
                     <li class="nav-item nav-space">
-                        <a class="cus-link"
-                           href="#">CATEGORIES</a>
+                        <button class="cus-link cus-link-button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#Category"
+                                type="button">
+                            CATEGORIES
+                        </button>
                     </li>
                     <li class="nav-item nav-space-last">
                         <a class="cus-link"

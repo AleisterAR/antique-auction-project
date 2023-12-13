@@ -36,6 +36,7 @@ Route::post('/item/store', [ItemController::class, 'store'])->name('user.item.st
 Route::get('/about-us', [\App\Http\Controllers\User\AboutUsController::class, '__invoke'])->name('aboutus');
 Route::get('/contacts', [\App\Http\Controllers\User\ContactsController::class, '__invoke'])->name('contacts');
 Route::get('/item/info', [\App\Http\Controllers\User\ItemInfoController::class, '__invoke'])->name('user.item.info');
+Route::get('/home', [\App\Http\Controllers\HomeController::class, '__invoke'])->name('home');
 
 Route::group(['middleware'  => ['auth']], function () {
     Route::get('/item/{id}', [ItemController::class, 'show'])->name('user.item.show');
