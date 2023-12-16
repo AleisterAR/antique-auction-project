@@ -30,7 +30,7 @@
                              src="{{ asset('storage/antique/' . $item->image->file_name) }}"
                              alt="Item 1">
                         <div class="card-body cus-card-body">
-                            <h5 class="card-title cus-card-title">{{ $item->description }}</h5>
+                            <h5 class="card-title cus-card-title">{{ $item->name }}</h5>
                             @if ($item->auction?->start_time > now())
                                 <p>No auction</p>
                             @else

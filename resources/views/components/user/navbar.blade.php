@@ -63,15 +63,18 @@
                     </li>
                     <li class="nav-item nav-space-searchbar">
                         <form class="d-flex pad_for_s_bar"
-                              role="search">
+                              role="search"
+                              action="{{ route('user.item.info') }}">
                             <div class="input-group mb-3">
                                 <input class="form-control bg-search-bar"
+                                       value="{{ request('search') }}"
+                                       name="search"
                                        type="search"
                                        aria-label="Search"
                                        aria-describedby="ba2">
                                 <button class="btn btn-search-bar"
                                         id="ba2"
-                                        type="button">
+                                        type="submit">
                                     <i class="bi bi-search"></i>
                                 </button>
                             </div>
@@ -104,7 +107,7 @@
                                     </li>
                                     <li>
                                         <form action={{ route('user.logout') }}
-                                                  method="POST">
+                                              method="POST">
                                             @csrf
                                             <button class="dropdown-item"
                                                     type="submit">Log out</button>
