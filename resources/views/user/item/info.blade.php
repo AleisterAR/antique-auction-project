@@ -24,7 +24,8 @@
     <div class="container mt-4 item-detail-container-box">
         <div class="row">
             @forelse ($items as $item)
-                <div class="col-lg-3 col-md-6 mb-4 col-12">
+                <a class="col-lg-3 d-block col-md-6 mb-4 col-12"
+                   href="{{ route('user.item.show', $item->id) }}">
                     <div class="card cus-card">
                         <img class="card-img-top cus-card"
                              src="{{ asset('storage/antique/' . $item->image->file_name) }}"
@@ -39,12 +40,12 @@
                                           class="card-text cus-card-bid-amount">{{ $item->auction?->currentBid?->bid_amount ? '€ ' . $item->auction->currentBid->bid_amount : '-' }}</span>
                                 </p>
                                 <p class="card-text cus-card-timer">
-                                    {{ $item->auction?->end_time ? now()->diffInDays($item->auction->end_time) . 'left' : '-' }}
+                                    {{ $item->auction?->end_time ? now()->diffInDays($item->auction->end_time) . ' days left' : '-' }}
                                 </p>
                             @endif
                         </div>
                     </div>
-                </div>
+                </a>
             @empty
             @endforelse
             {{-- <div class="col-lg-3 col-md-6 mb-4 col-12">
