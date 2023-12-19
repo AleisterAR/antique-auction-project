@@ -936,6 +936,10 @@ textarea.form-cus-lg {
     color: #919397;
 }
 
+.cus-card-link-decoration{
+    text-decoration: none;
+}
+
 .pagination-btn{
     background-color: #DE3C1C;
     height: 52px;

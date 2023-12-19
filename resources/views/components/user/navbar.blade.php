@@ -23,7 +23,7 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav flex-grow-1 pe-3">
                     <li class="nav-item nav-space">
-                        <a class="cus-link l_active"
+                        <a class="cus-link"
                            href="{{route('home')}}"
                            aria-current="page">HOME</a>
                     </li>

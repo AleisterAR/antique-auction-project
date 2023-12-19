@@ -1,30 +1,10 @@
 @extends('master')
 
 @section('content')
-    <div class="container item-detail-container-box">
-        <div class="d-flex justify-content-end sort-by-font">
-            Sort by <div class="dropdown">
-                <button class="dropdown-toggle dropdown-toggle-cus"
-                        data-bs-toggle="dropdown"
-                        type="button"
-                        aria-expanded="false">
-                    Dropdown button
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item"
-                           href="#">Action</a></li>
-                    <li><a class="dropdown-item"
-                           href="#">Another action</a></li>
-                    <li><a class="dropdown-item"
-                           href="#">Something else here</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="container mt-4 item-detail-container-box">
         <div class="row">
             @forelse ($items as $item)
-                <a class="col-lg-3 d-block col-md-6 mb-4 col-12"
+                <a class="col-lg-3 d-block col-md-6 mb-4 col-12 cus-card-link-decoration"
                    href="{{ route('user.item.show', $item->id) }}">
                     <div class="card cus-card">
                         <img class="card-img-top cus-card"
