@@ -1004,18 +1004,60 @@ textarea.form-cus-lg {
     margin-top: -8px;
 }
 
-@media(max-width: 768px)
-{
-    .masthead
-    {
-        min-height: 30vh;
-    }
-}
-
 .masthead-style{
-    padding-top: 50px;
+    padding-top: 13%;
     padding-bottom: 75px;
     padding-left: 60px;
     font-family: 'Le Monde Livre Classic Std', serif;
     font-size: 3rem;
 }
+
+.boasting-1 {
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Lora', serif;
+    color: #ffffff;
+    font-size: 54px;
+    line-height: 1.4;
+    letter-spacing: 0px;
+}
+
+.btn-view-now{
+    width: 162px;
+    height: 50px;
+    background-color: #DE3C1C;
+    color: white;
+    font-family: "AwanZaman-Regular", sans-serif;
+    font-size: 16px;
+    padding-top: 13px;
+}
+
+.btn-view-now:hover{
+    background-color: #A1A1A1;
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 1039px)
+{
+    .boasting-1 {
+    font-size: 30px;
+    line-height: 1.4;
+    letter-spacing: 0px;
+    }
+    .masthead
+    {
+        min-height: 25vh;
+    }
+    .masthead-style{
+        padding-top: 8%;
+    }
+    .btn-view-now{
+        width: 115px;
+        height: 40px;
+        font-size: 14px;
+        padding-top: 9px;
+    }
+}
+
+
