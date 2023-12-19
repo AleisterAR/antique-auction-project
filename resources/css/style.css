@@ -4,6 +4,7 @@
 
 .nav_ground{
     background-color: #222222;
+    padding-bottom: 0;
 }
 
 .nav-space{
@@ -996,6 +997,7 @@ textarea.form-cus-lg {
     background-attachment: fixed;
     min-height: 60vh;
     color: white;
+    margin-top: -8px;
 }
 
 @media(max-width: 768px)
@@ -1005,3 +1007,4 @@ textarea.form-cus-lg {
         min-height: 30vh;
     }
 }
+

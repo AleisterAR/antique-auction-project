@@ -29,7 +29,7 @@
                     </li>
                     <li class="nav-item nav-space">
                         <a class="cus-link"
-                           href="#">
+                           href="{{route('aboutus')}}">
                             ABOUT
                         </a>
                     </li>
