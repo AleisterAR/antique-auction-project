@@ -1,26 +1,6 @@
 @extends('master')
 
 @section('content')
-    <div class="container item-detail-container-box">
-        <div class="d-flex justify-content-end sort-by-font">
-            Sort by <div class="dropdown">
-                <button class="dropdown-toggle dropdown-toggle-cus"
-                        data-bs-toggle="dropdown"
-                        type="button"
-                        aria-expanded="false">
-                    Dropdown button
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item"
-                           href="#">Action</a></li>
-                    <li><a class="dropdown-item"
-                           href="#">Another action</a></li>
-                    <li><a class="dropdown-item"
-                           href="#">Something else here</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="container mt-4 item-detail-container-box">
         <div class="row">
             @forelse ($items as $item)
@@ -39,7 +19,7 @@
                                           class="card-text cus-card-bid-amount">{{ $item->auction?->currentBid?->bid_amount ? '€ ' . $item->auction->currentBid->bid_amount : '-' }}</span>
                                 </p>
                                 <p class="card-text cus-card-timer">
-                                    {{ $item->auction?->end_time ? now()->diffInDays($item->auction->end_time) . 'left' : '-' }}
+                                    {{ $item->auction?->end_time ? now()->diffInDays($item->auction->end_time) . ' d left' : '-' }}
                                 </p>
                             @endif
                         </div>

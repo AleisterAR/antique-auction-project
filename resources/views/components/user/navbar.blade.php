@@ -24,7 +24,7 @@
                 <ul class="navbar-nav flex-grow-1 pe-3">
                     <li class="nav-item nav-space">
                         <a class="cus-link l_active"
-                           href="#"
+                           href="{{route('home')}}"
                            aria-current="page">HOME</a>
                     </li>
                     <li class="nav-item nav-space">
@@ -33,33 +33,19 @@
                             ABOUT
                         </a>
                     </li>
-                    <li class="nav-item dropdown nav-space">
-                        <a class="cus-link dropdown-toggle"
-                           data-bs-toggle="dropdown"
-                           href="#"
-                           role="button"
-                           aria-expanded="false">
-                            AUCTION
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item"
-                                   href="#">Action</a></li>
-                            <li><a class="dropdown-item"
-                                   href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item"
-                                   href="#">Something else here</a></li>
-                        </ul>
+                    <li class="nav-item nav-space">
+                        <a class="cus-link"
+                           href="{{route('user.item.info')}}">AUCTIONS</a>
                     </li>
                     <li class="nav-item nav-space">
                         <a class="cus-link"
+                           data-bs-toggle="modal"
+                           data-bs-target="#Category"
                            href="#">CATEGORIES</a>
                     </li>
                     <li class="nav-item nav-space-last">
                         <a class="cus-link"
-                           href="#">CONTACT</a>
+                           href="{{route('contacts')}}">CONTACT</a>
                     </li>
                     <li class="nav-item nav-space-searchbar">
                         <form class="d-flex pad_for_s_bar"
