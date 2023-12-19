@@ -1012,3 +1012,10 @@ textarea.form-cus-lg {
     }
 }
 
+.masthead-style{
+    padding-top: 50px;
+    padding-bottom: 75px;
+    padding-left: 60px;
+    font-family: 'Le Monde Livre Classic Std', serif;
+    font-size: 3rem;
+}

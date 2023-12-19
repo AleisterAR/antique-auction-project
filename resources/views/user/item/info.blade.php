@@ -13,14 +13,15 @@
                         <div class="card-body cus-card-body">
                             <h5 class="card-title cus-card-title">{{ $item->name }}</h5>
                             @if ($item->auction?->start_time > now())
-                                <p>No auction</p>
+                                <p>No auction available</p>
                             @else
                                 <p class="card-text cus-card-current-bid">Current Bid <br>
                                     <span
                                           class="card-text cus-card-bid-amount">{{ $item->auction?->currentBid?->bid_amount ? '€ ' . $item->auction->currentBid->bid_amount : '-' }}</span>
                                 </p>
                                 <p class="card-text cus-card-timer">
-                                    @if ($item->auction->end_time >= now())
+                                    @if ($item->auction->end_time <= now())
+                                        Auction Ended
                                     @else
                                         {{ $item->auction?->end_time ? now()->diffInDays($item->auction->end_time) . ' days left' : '-' }}
                                     @endif
