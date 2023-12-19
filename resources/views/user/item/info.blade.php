@@ -20,7 +20,10 @@
                                           class="card-text cus-card-bid-amount">{{ $item->auction?->currentBid?->bid_amount ? '€ ' . $item->auction->currentBid->bid_amount : '-' }}</span>
                                 </p>
                                 <p class="card-text cus-card-timer">
-                                    {{ $item->auction?->end_time ? now()->diffInDays($item->auction->end_time) . ' days left' : '-' }}
+                                    @if ($item->auction->end_time >= now())
+                                    @else
+                                        {{ $item->auction?->end_time ? now()->diffInDays($item->auction->end_time) . ' days left' : '-' }}
+                                    @endif
                                 </p>
                             @endif
                         </div>
