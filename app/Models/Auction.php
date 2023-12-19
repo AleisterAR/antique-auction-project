@@ -30,7 +30,7 @@ class Auction extends Model
     }
 
     public function currentBid(){
-        return $this->hasOne(Bid::class)->orderBy('bid_amount', 'desc')->take(1);
+        return $this->hasOne(Bid::class)->orderBy('bid_amount', 'desc');
     }
 
     public function endTimeFormat()
