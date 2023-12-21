@@ -3,24 +3,49 @@
 @section('content')
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="/storage/img.png" class="d-block w-100" alt="...">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="{{ asset('static-images/static_image1.jpg')}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Globally Available</h5>
+                    <h5>Antiques</h5>
+                    <br>
+                    <p>A place to appreciate culture of other countries in one go!</p>
+                    <p>Antiques from all over the globe gathered in one place!</p>
+                    <br><br>
+                    <a class="btn-cus btn-view-now" href="{{ route('user.item.info') }}">
+                        VIEW NOW!
+                    </a>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="/storage/wallpaperflare.com_wallpaper.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="{{ asset('static-images/static_image2.jpg')}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Globally Available</h5>
+                    <h5>Antiques</h5>
+                    <br>
+                    <p>A place to appreciate culture of other countries in one go!</p>
+                    <p>Antiques from all over the globe gathered in one place!</p>
+                    <br><br>
+                    <a class="btn-cus btn-view-now" href="{{ route('user.item.info') }}">
+                        VIEW NOW!
+                    </a>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="/storage/wallpaperflare.com_wallpaper.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="{{ asset('static-images/static_image3.jpg')}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Globally Available</h5>
+                    <h5>Antiques</h5>
+                    <br>
+                    <p>A place to appreciate culture of other countries in one go!</p>
+                    <p>Antiques from all over the globe gathered in one place!</p>
+                    <br><br>
+                    <a class="btn-cus btn-view-now" href="{{ route('user.item.info') }}">
+                        VIEW NOW!
+                    </a>
+                </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
     <div class="container mt-4 item-detail-container-box">
         <div class="text-center">

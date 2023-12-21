@@ -1019,7 +1019,7 @@ textarea.form-cus-lg {
     color: #ffffff;
     font-size: 54px;
     line-height: 1.4;
-    letter-spacing: 0px;
+    letter-spacing: 0;
 }
 
 .btn-view-now{
@@ -1038,12 +1038,48 @@ textarea.form-cus-lg {
     text-decoration: none;
 }
 
+
+.featured-font{
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Lora', serif;
+    color: #5a5a5a;
+    font-size: 32px;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+.carousel-cus-text{
+    text-align: left;
+    top: 160px;
+    left: 325px;
+    bottom: 160px;
+}
+
+.slider-cus-text1{
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Lora', serif;
+    color: #ffffff;
+    font-size: 54px;
+    line-height: 1;
+    letter-spacing: 0px;
+}
+
+.slider-cus-text2{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #ffffff;
+    line-height: 1;
+    font-size: 16px;
+    letter-spacing: 0;
+}
+
 @media (max-width: 1039px)
 {
     .boasting-1 {
-    font-size: 30px;
-    line-height: 1.4;
-    letter-spacing: 0px;
+        font-size: 30px;
+        line-height: 1.4;
+        letter-spacing: 0px;
     }
     .masthead
     {
@@ -1058,15 +1094,9 @@ textarea.form-cus-lg {
         font-size: 14px;
         padding-top: 9px;
     }
+    .carousel-cus-text{
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
 }
-
-.featured-font{
-    font-weight: 400;
-    font-style: normal;
-    font-family: 'Lora', serif;
-    color: #5a5a5a;
-    font-size: 32px;
-    line-height: 1.5;
-    letter-spacing: 0;
-}
-
