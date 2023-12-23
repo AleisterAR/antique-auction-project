@@ -22,9 +22,8 @@ use Spatie\Permission\Contracts\Role;
 
 require_once(__DIR__ . '/admin.php');
 
-Route::get('/', function () {
-    $i = asset('storage/antique/5iDhmI4Qpj1zGbEj7UnfTce2Y45zwEFNWWbAUiq7.png');
-    echo "<image src='$i'/>";
+Route::get('/',function(){
+    return to_route('home');
 });
 
 Route::post('/login', [AuthController::class, 'login'])->name('user.login');

@@ -32,12 +32,15 @@
         <x-user.modal.register />
         <x-user.modal.auction />
     </div>
-    @vite('resources/js/main.js')
     @yield('content')
-    @yield('script')
     <div id="footer">
         <x-user.footer />
     </div>
+    <script>
+        var $from = {!! json_encode(Session::get('from') ?? '') !!}
+    </script>
+    @vite('resources/js/main.js')
+    @yield('script')
 </body>
 
 </html>

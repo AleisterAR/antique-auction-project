@@ -62,6 +62,6 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('user.item.create');
+        return redirect()->route('home');
     }
 }

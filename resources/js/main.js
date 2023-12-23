@@ -4,6 +4,10 @@ const sigInErrors = {
 }
 const signInForm = document.querySelector('#signIn-form')
 
+if ($from) {
+    document.querySelector('[data-bs-target="#SignIn"]').click()
+}
+
 document.querySelector('#btn-sign').addEventListener('click', function (e) {
     Object.values(sigInErrors).forEach(v => {
         v.innerText = ''
@@ -12,9 +16,9 @@ document.querySelector('#btn-sign').addEventListener('click', function (e) {
     axios.post('/login', formData).then(res => {
         const user = res.data.user
         if (user.roles?.length && user.roles?.some(r => r.name === 'admin' || r.name === 'expert')) {
-            return window.location.pathname = '/admin'
+            return window.location.pathname = `/${$from}` || '/admin'
         }
-        window.location.reload(true)
+        window.location.href = `/${$from}` || window.location.pathname
 
     }).catch(error => {
         if (error.response.status === 422) {
@@ -66,7 +70,7 @@ document.querySelector('#auction-form').addEventListener('submit', function (e) 
     axios.post('/auction', formData).then(res => {
         window.location.href = window.location.pathname
     }).catch(error => {
-        if(error.response.status === 422) {
+        if (error.response.status === 422) {
             console.log(error.response.data)
         }
     })
