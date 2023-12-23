@@ -996,6 +996,15 @@ textarea.form-cus-lg {
 }
 
 .masthead {
+    background: url('/public/static-images/static_image2.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 60vh;
+    color: white;
+    margin-top: -8px;
+}
+
+.masthead2 {
     background: url('/storage/wallpaperflare.com_wallpaper.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -1010,6 +1019,16 @@ textarea.form-cus-lg {
     padding-left: 60px;
     font-family: 'Le Monde Livre Classic Std', serif;
     font-size: 3rem;
+}
+
+.masthead-style2{
+    font-weight: 300;
+    font-style: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0;
 }
 
 .boasting-1 {
@@ -1049,30 +1068,7 @@ textarea.form-cus-lg {
     letter-spacing: 0;
 }
 
-.carousel-cus-text{
-    text-align: left;
-    top: 160px;
-    left: 325px;
-    bottom: 160px;
-}
 
-.slider-cus-text1{
-    font-weight: 400;
-    font-style: normal;
-    font-family: 'Lora', serif;
-    color: #ffffff;
-    font-size: 54px;
-    line-height: 1;
-    letter-spacing: 0px;
-}
-
-.slider-cus-text2{
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #ffffff;
-    line-height: 1;
-    font-size: 16px;
-    letter-spacing: 0;
-}
 
 @media (max-width: 1039px)
 {
@@ -1085,18 +1081,19 @@ textarea.form-cus-lg {
     {
         min-height: 25vh;
     }
+    .masthead2{
+        min-height: 25vh;
+    }
     .masthead-style{
         padding-top: 8%;
+    }
+    .masthead-style2{
+        font-size: 13px;
     }
     .btn-view-now{
         width: 115px;
         height: 40px;
         font-size: 14px;
         padding-top: 9px;
-    }
-    .carousel-cus-text{
-        top: 0;
-        bottom: 0;
-        left: 0;
     }
 }
