@@ -23,11 +23,8 @@
 </head>
 
 <body>
-    <div id="modal">
-        <x-user.modal.categories />
-        <x-user.modal.login />
-        <x-user.modal.register />
-        <x-user.modal.auction />
+    <div id="navbar">
+        <x-user.navbar />
     </div>
     @vite('resources/js/main.js')
     @yield('content')
