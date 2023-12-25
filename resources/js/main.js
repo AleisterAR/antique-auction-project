@@ -16,7 +16,7 @@ document.querySelector('#btn-sign').addEventListener('click', function (e) {
     axios.post('/login', formData).then(res => {
         const user = res.data.user
         if (user.roles?.length && user.roles?.some(r => r.name === 'admin' || r.name === 'expert')) {
-            return window.location.pathname = `/${$from}` || '/admin'
+            return window.location.pathname = '/admin'
         }
         window.location.href = `/${$from}` || window.location.pathname
 
