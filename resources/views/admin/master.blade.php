@@ -23,12 +23,8 @@
 </head>
 
 <body>
-    <div id="navbar">
-        <x-user.navbar />
-    </div>
     @vite('resources/js/main.js')
     @yield('content')
     @yield('script')
 </body>
-
 </html>
