@@ -9,12 +9,12 @@ use App\Http\Controllers\Admin\UserController;
 Route::prefix('/admin')->group(function () {
     Route::group(['middleware' => ['role:admin|expert']], function () {
         Route::get('/', HomeController::class)->name('admin.index');
-        Route::get('/user', [UserController::class, 'index'])->name('admin.user.index');
     });
 
     Route::group(['middleware' => ['role:admin']], function () {
         Route::get('/user/create', [UserController::class, 'create'])->name('admin.user.create');
         Route::post('/user/store', [UserController::class, 'store'])->name('admin.user.store');
+        Route::get('/user/category', \App\Http\Controllers\Admin\CategoryController::class)->name('admin.user.category');
     });
 
     Route::group(['middleware' => ['role:expert']], function () {

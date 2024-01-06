@@ -1107,3 +1107,69 @@ textarea.form-cus-lg {
         padding-top: 9px;
     }
 }
+
+.admin-container{
+    padding: 275px 50px 50px 50px;
+}
+
+@media (max-width: 991px)
+{
+    .admin-container{
+        padding: 100px 50px 50px 50px;
+    }
+}
+
+.admin-icon-row{
+    background-color: #222222;
+}
+
+.admin-icon-in{
+    padding: 20px 40px 40px 40px;
+    text-align: center;
+}
+
+.admin-icon-size{
+    font-size: 120pt;
+}
+
+.admin-icon-c{
+    color: #DE3C1C;
+    text-decoration: none;
+}
+
+.admin-icon-c:hover{
+    color: white;
+}
+
+.admin-container-border{
+    border-radius: 25px;
+    border: 2px solid #2D2D2D;
+}
+
+.role-option{
+    text-transform: capitalize;
+}
+
+.admin-back-icon{
+    font-size: 30pt;
+    color: #222222;
+}
+
+.admin-back-icon:hover{
+    color: #DE3C1C;
+}
+
+@media (max-width: 412px)
+{
+    .admin-back-icon{
+        font-size: 20pt;
+    }
+}
+
+.form-style{
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    border: 1px solid black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
