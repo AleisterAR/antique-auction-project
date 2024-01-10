@@ -17,6 +17,8 @@ Route::prefix('/admin')->group(function () {
         Route::post('/user/store', [UserController::class, 'store'])->name('admin.user.store');
         Route::get('/user/category', \App\Http\Controllers\Admin\CategoryController::class)->name('admin.user.category');
         Route::post('/user/category', [CategoryController::class, 'store'])->name('admin.user.category');
+        Route::get('/user/antiques', \App\Http\Controllers\Admin\AntiquesController::class)->name('admin.user.antiques');
+        Route::get('/user/auction', \App\Http\Controllers\Admin\AuctionController::class)->name('admin.user.auction');
     });
 
     Route::group(['middleware' => ['role:expert']], function () {
