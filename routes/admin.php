@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\EntryRegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\EntryRegisterController;
 
 Route::prefix('/admin')->group(function () {
     Route::group(['middleware' => ['role:admin|expert']], function () {
@@ -15,6 +16,7 @@ Route::prefix('/admin')->group(function () {
         Route::get('/user/create', [UserController::class, 'create'])->name('admin.user.create');
         Route::post('/user/store', [UserController::class, 'store'])->name('admin.user.store');
         Route::get('/user/category', \App\Http\Controllers\Admin\CategoryController::class)->name('admin.user.category');
+        Route::post('/user/category', [CategoryController::class, 'store'])->name('admin.user.category');
     });
 
     Route::group(['middleware' => ['role:expert']], function () {

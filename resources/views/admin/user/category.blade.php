@@ -9,10 +9,12 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10 form-style">
                     <h1 class="form-title">Category Registration</h1><br><br>
-                    <form>
+                    <form  method="POST">
+                        @csrf
+                        @method('POST')
                         <div class="mb-3">
                             <input class="form-cus"
-                                   name="user_name"
+                                   name="name"
                                    type="text"
                                    placeholder="Category Name">
                         </div>

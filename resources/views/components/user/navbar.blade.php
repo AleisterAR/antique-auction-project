@@ -23,29 +23,29 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav flex-grow-1 pe-3">
                     <li class="nav-item nav-space">
-                        <a class="cus-link"
-                           href="{{route('home')}}"
+                        <a @class(['cus-link', 'active' => request()->routeIs('home')])
+                           href="{{ route('home') }}"
                            aria-current="page">HOME</a>
                     </li>
                     <li class="nav-item nav-space">
-                        <a class="cus-link"
-                           href="{{route('aboutus')}}">
+                        <a  @class(['cus-link', 'active' => request()->routeIs('aboutus')])
+                           href="{{ route('aboutus') }}">
                             ABOUT
                         </a>
                     </li>
                     <li class="nav-item nav-space">
-                        <a class="cus-link"
-                           href="{{route('user.item.info')}}">AUCTIONS</a>
+                        <a @class(['cus-link', 'active' => request()->routeIs('user.item.info')])
+                           href="{{ route('user.item.info') }}">AUCTIONS</a>
                     </li>
                     <li class="nav-item nav-space">
-                        <a class="cus-link"
+                        <a  @class(['cus-link', 'active' => false ])
                            data-bs-toggle="modal"
                            data-bs-target="#Category"
                            href="#">CATEGORIES</a>
                     </li>
                     <li class="nav-item nav-space-last">
-                        <a class="cus-link"
-                           href="{{route('contacts')}}">CONTACT</a>
+                        <a  @class(['cus-link', 'active' => request()->routeIs('contacts')])
+                           href="{{ route('contacts') }}">CONTACT</a>
                     </li>
                     <li class="nav-item nav-space-searchbar">
                         <form class="d-flex pad_for_s_bar"
@@ -53,9 +53,9 @@
                               action="{{ route('user.item.info') }}">
                             <div class="input-group mb-3">
                                 <input class="form-control bg-search-bar"
-                                       value="{{ request('search') }}"
                                        name="search"
                                        type="search"
+                                       value="{{ request('search') }}"
                                        aria-label="Search"
                                        aria-describedby="ba2">
                                 <button class="btn btn-search-bar"

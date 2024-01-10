@@ -23,7 +23,7 @@ class ItemInfoController extends Controller
             })->when($sort, function ($query, $sort) {
                 $query->leftJoin('auctions', 'items.id', '=', 'auctions.item_id')
                     ->orderBy('auctions.initial_price', $sort);
-            })->paginate(10);
+            })->paginate(12);
 
         $items->appends(request()->query());
 
