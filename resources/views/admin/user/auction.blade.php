@@ -5,12 +5,13 @@
             <a href="{{ route('admin.index') }}" class="admin-back-icon">
                 <i class="bi bi-box-arrow-left"></i>
             </a>
-            <div>
-                <div>
-                    <h1>All Auctions List</h1>
-                    <br>
-                </div>
-                <div>
+            <div class="container-fluid px-4">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h1>Auctions List</h1>
+                        <br>
+                    </div>
+                    <div class="table-responsive card-body">
                     <table class="table table-bordered" id="datatablesSimple">
                         <thead>
                         <tr>

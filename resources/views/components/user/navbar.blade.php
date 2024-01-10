@@ -37,11 +37,13 @@
                         <a @class(['cus-link', 'active' => request()->routeIs('user.item.info')])
                            href="{{ route('user.item.info') }}">AUCTIONS</a>
                     </li>
-                    <li class="nav-item nav-space">
-                        <a  @class(['cus-link', 'active' => false ])
-                           data-bs-toggle="modal"
-                           data-bs-target="#Category"
-                           href="#">CATEGORIES</a>
+                    <li class="nav-item nav-space dropdown">
+                        <button @class(['cus-link cus-link-button dropdown-toggle', 'active' => false ])
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false">CATEGORIES</button>
+
+                        <ul class="dropdown-menu dropdown-cus">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item nav-space-last">
                         <a  @class(['cus-link', 'active' => request()->routeIs('contacts')])
@@ -86,8 +88,13 @@
                                     <i class="bi bi-person-fill"></i>
                                 </button>
                                 <ul class="dropdown-menu dropdown-cus">
-                                    <li><a class="dropdown-item"
-                                           href="#">Inventory</a></li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="{{ route('user.item.inventory') }}">Inventory</a></li>
+                                    <li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="{{ route('user.item.create') }}">Register New Item</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>

@@ -27,7 +27,6 @@
         <x-user.navbar />
     </div>
     <div id="modal">
-        <x-user.modal.categories />
         <x-user.modal.login />
         <x-user.modal.register />
         <x-user.modal.auction />

@@ -31,6 +31,7 @@ Route::post('/register', [AuthController::class, 'register'])->name('user.regist
 Route::post('/logout', [AuthController::class, 'logout'])->name('user.logout');
 
 Route::get('/item/create', [ItemController::class, 'create'])->name('user.item.create');
+Route::get('/item/inventory', [\App\Http\Controllers\User\InventoryController::class, '__invoke'])->name('user.item.inventory');
 Route::post('/item/store', [ItemController::class, 'store'])->name('user.item.store');
 Route::get('/about-us', [\App\Http\Controllers\User\AboutUsController::class, '__invoke'])->name('aboutus');
 Route::get('/contacts', [\App\Http\Controllers\User\ContactsController::class, '__invoke'])->name('contacts');
