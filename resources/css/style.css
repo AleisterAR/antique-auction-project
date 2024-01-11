@@ -95,7 +95,7 @@
     color: white;
 }
 
-@media (max-width: 410px){
+@media (max-width: 412px){
     .cus-brand{
         margin-left: 0.75rem;
         margin-right: 0.75rem;
@@ -370,7 +370,7 @@
     background-color: #DE3C1C;
     color: white;
     font-family: "AwanZaman-Regular", sans-serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .btn-sign-in:hover{
