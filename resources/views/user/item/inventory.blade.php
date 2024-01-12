@@ -4,7 +4,7 @@
         <div class="container-fluid px-4">
             <div class="card mt-5">
                 <div class="card-header">
-                    <h1>Antiques List</h1>
+                    <h1>Inventory</h1>
                     <br>
                 </div>
                 <div class="table-responsive card-body">
@@ -43,6 +43,10 @@
                                     </td>
                                     <td>
                                         {{$item->description}}
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-theme" href="{{ route('user.item.update') }}">Update</a>
+                                        <a class="btn btn-theme">Delete</a>
                                     </td>
                                 </tr>
                             @empty

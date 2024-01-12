@@ -1179,3 +1179,7 @@ textarea.form-cus-lg {
     padding-bottom: 30px;
 }
 
+.btn-theme{
+    background-color: #DE3C1C;
+    color: white;
+}
