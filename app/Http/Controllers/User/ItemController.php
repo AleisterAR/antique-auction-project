@@ -7,14 +7,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\AuctionRequest;
+use App\Models\Image;
+use App\Models\Item;
+use App\Models\Provenance;
 use App\Repository\User\AuctionRepository;
 use App\Repository\User\BidRepository;
 use App\Repository\User\CategoryRepository;
 use App\Repository\User\ItemRepository;
 use App\Repository\User\ProvenanceRepository;
 use App\Services\UploadImageService;
-use Carbon\Carbon;
+use Exception;
 
 class ItemController extends Controller
 {
@@ -98,5 +100,55 @@ class ItemController extends Controller
             }
         }
         return view('user.item.show', compact('item', 'currentBid'));
+    }
+
+    public function destroy($id)
+    {
+        $this->itemRepository->destroy($id);
+        return redirect()->back();
+    }
+
+    public function update(Request $request, $id)
+    {
+        DB::beginTransaction();
+        try {
+            $data = array_merge($request->only(['name', 'description', 'condition', 'category_id']), ['user_id' => $request->user()->id]);
+            $this->itemRepository->update($data, $id);
+            $provenance = $request->only(['creator', 'year']);
+            $this->provenanceRepository->update($provenance, $id);
+
+            if ($request->hasFile('antique')) {
+                $antiqueImage = new UploadImageService($request->file('antique'));
+                $antiqueImage->upload('antique');
+
+                Image::where('imageable_id', $id)
+                    ->where('imageable_type', Item::class)
+                    ->update([
+                        'file_name' => $antiqueImage->hashName,
+                        'extension' => $antiqueImage->extension,
+                        'image_type' => config('global.image_type.image_of_antique')
+                    ]);
+            }
+
+            if ($request->hasFile('certificate')) {
+                $item = Item::with(['provenance'])->where('id', $id)->first();
+                $provenanceImage = new UploadImageService($request->file('certificate'));
+                $provenanceImage->upload('certificate');
+                Image::where('imageable_id', $item->provenance->id)
+                    ->where('imageable_type', Provenance::class)
+                    ->update([
+                        'file_name' => $provenanceImage->hashName,
+                        'extension' => $provenanceImage->extension,
+                        'image_type' => config('global.image_type.certificate')
+                    ]);
+            }
+
+            DB::commit();
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+            DB::rollBack();
+            abort(500);
+        }
+        return redirect()->back();
     }
 }

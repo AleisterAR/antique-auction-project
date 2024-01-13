@@ -33,4 +33,9 @@ class ItemRepository
         $item = $this->model::findOrFail($id);
         $item->update(['status' => $status]);
     }
+
+    public function destroy($id)
+    {
+        Item::where('id', $id)->delete();
+    }
 }

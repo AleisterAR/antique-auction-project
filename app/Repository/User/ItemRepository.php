@@ -41,4 +41,17 @@ class ItemRepository
     {
         $item->images()->createMany($data);
     }
+
+    public function destroy($id)
+    {
+        Item::where('id', $id)->where('user_id', auth()->user()->id)->delete();
+    }
+
+    public function update($item, $id)
+    {
+        return Item::where('id', $id)
+            ->where('user_id', auth()->user()->id)
+            ->firstOrFail()
+            ->update($item);
+    }
 }

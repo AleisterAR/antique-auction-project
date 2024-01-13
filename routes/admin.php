@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\EntryRegisterController;
 Route::prefix('/admin')->group(function () {
     Route::group(['middleware' => ['role:admin|expert']], function () {
         Route::get('/', HomeController::class)->name('admin.index');
+        Route::delete('/item/{id}/delete', [ItemController::class, 'destroy'])->name('admin.item.destroy');
     });
 
     Route::group(['middleware' => ['role:admin']], function () {

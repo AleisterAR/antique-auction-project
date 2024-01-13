@@ -18,7 +18,6 @@
                                 <th>Full Name</th>
                                 <th>User Name</th>
                                 <th>Email</th>
-                                <th>Password</th>
                                 <th>Phone Number</th>
                                 <th>Address</th>
                                 <th>Role</th>
@@ -26,8 +25,26 @@
                             </tr>
                             </thead>
                             <tbody>
-
-
+                                @foreach ($users as $user)
+                                    <tr>
+                                        <td>{{ $user->full_name }}</td>
+                                        <td>{{ $user->user_name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->phone_number }}</td>
+                                        <td>{{ $user->address }}</td>
+                                        <td>{{ $user->roles->pluck('name')->implode(',') }}</td>
+                                        <td>
+                                            <form action="">
+                                                <button class="btn btn-danger btn-sm">
+                                                    <i class="bi bi-trash text-white"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-warning">
+                                                        <i class="bi bi-file-earmark text-white"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

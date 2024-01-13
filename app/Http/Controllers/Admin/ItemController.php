@@ -20,4 +20,10 @@ class ItemController extends Controller
         $this->itemRepository->status($request,$id);
         return back();
     }
+
+    public function destroy($id)
+    {
+        $this->itemRepository->destroy($id);
+        return redirect()->back();
+    }
 }

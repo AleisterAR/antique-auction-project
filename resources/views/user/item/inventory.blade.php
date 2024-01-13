@@ -33,20 +33,27 @@
                                     <td>{{ $item->condition }}</td>
                                     <td><a href="{{ asset('storage/antique/' . $item->image->file_name) }}"
                                            target="_blank">
-                                           Image of item
+                                            Image of item
                                         </a>
                                     </td>
                                     <td><a href="{{ asset('storage/certificate/' . $item->provenance->image->file_name) }}"
                                            target="_blank">
-                                           Certificate
+                                            Certificate
                                         </a>
                                     </td>
                                     <td>
-                                        {{$item->description}}
+                                        {{ $item->description }}
                                     </td>
-                                    <td>
-                                        <a class="btn btn-theme" href="{{ route('user.item.update') }}">Update</a>
-                                        <a class="btn btn-theme">Delete</a>
+                                    <td class="d-flex gap-1">
+                                        <a class="btn btn-theme"
+                                           href="{{ route('user.item.update', ['id' => $item->id]) }}">Update</a>
+                                        <form action="{{ route('user.item.destroy', ['id' => $item->id]) }}"
+                                              method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-theme"
+                                                    type="submit">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @empty

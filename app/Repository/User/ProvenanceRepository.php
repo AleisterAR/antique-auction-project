@@ -24,4 +24,9 @@ class ProvenanceRepository
     {
         $provenance->images()->createMany($data);
     }
+
+    public function update($data, $itemId)
+    {
+        Provenance::where('item_id', $itemId)->firstOrFail()->update($data);
+    }
 }

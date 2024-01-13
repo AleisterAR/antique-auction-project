@@ -24,7 +24,15 @@
                         </tr>
                         </thead>
                         <tbody>
-
+                            @foreach ($auctions as $auction)
+                                <tr>
+                                    <td>{{$auction->item->name}}</td>
+                                    <td>{{ $auction->start_time }}</td>
+                                    <td>{{ $auction->end_time }}</td>
+                                    <td>{{ $auction->currentBid->bid_amount ?? '-' }}</td>
+                                    <td>{{ $auction->status }}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

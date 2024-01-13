@@ -37,10 +37,12 @@ Route::get('/about-us', [\App\Http\Controllers\User\AboutUsController::class, '_
 Route::get('/contacts', [\App\Http\Controllers\User\ContactsController::class, '__invoke'])->name('contacts');
 Route::get('/item/info', [\App\Http\Controllers\User\ItemInfoController::class, '__invoke'])->name('user.item.info');
 Route::get('/home', [\App\Http\Controllers\HomeController::class, '__invoke'])->name('home');
-Route::get('/item/update', [\App\Http\Controllers\User\UpdateController::class, '__invoke'])->name('user.item.update');
+Route::get('/item/{id}/update', [\App\Http\Controllers\User\UpdateController::class, '__invoke'])->name('user.item.update');
 
 Route::group(['middleware'  => ['auth']], function () {
     Route::get('/item/{id}', [ItemController::class, 'show'])->name('user.item.show');
+    Route::delete('/item/{id}/delete', [ItemController::class, 'destroy'])->name('user.item.destroy');
+    Route::patch('/item/{id}/update', [ItemController::class, 'update'])->name('user.item.update');
     Route::post('/auction', [AuctionController::class, 'store'])->name('item.auction.store');
     Route::post('/bid', [BidControlller::class, 'store'])->name('user.bid.store');
 });

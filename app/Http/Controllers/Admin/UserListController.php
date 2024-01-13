@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class UserListController extends Controller
 {
     public function __invoke(){
-        return view('admin.user.user-list');
+        $users = User::has('roles')->get();
+        $users->load('roles');
+        return view('admin.user.user-list', compact('users'));
     }
 }

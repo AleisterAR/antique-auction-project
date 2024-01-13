@@ -19,6 +19,11 @@ class Auction extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function item()
+    {
+        return $this->belongsTo(Item::class);
+    }
+
     public function bids()
     {
         return $this->hasMany(Bid::class);
