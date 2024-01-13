@@ -23,31 +23,39 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav flex-grow-1 pe-3">
                     <li class="nav-item nav-space">
-                        <a @class(['cus-link', 'active' => request()->routeIs('home')])
-                           href="{{ route('home') }}"
-                           aria-current="page">HOME</a>
+                        <a href="{{ route('home') }}"
+                           aria-current="page"
+                           @class(['cus-link', 'active' => request()->routeIs('home')])>HOME</a>
                     </li>
                     <li class="nav-item nav-space">
-                        <a  @class(['cus-link', 'active' => request()->routeIs('aboutus')])
-                           href="{{ route('aboutus') }}">
+                        <a href="{{ route('aboutus') }}"
+                           @class(['cus-link', 'active' => request()->routeIs('aboutus')])>
                             ABOUT
                         </a>
                     </li>
                     <li class="nav-item nav-space">
-                        <a @class(['cus-link', 'active' => request()->routeIs('user.item.info')])
-                           href="{{ route('user.item.info') }}">AUCTIONS</a>
+                        <a href="{{ route('user.item.info') }}"
+                           @class(['cus-link', 'active' => request()->routeIs('user.item.info')])>AUCTIONS</a>
                     </li>
                     <li class="nav-item nav-space dropdown">
-                        <button @class(['cus-link cus-link-button dropdown-toggle', 'active' => false ])
-                                type="button" data-bs-toggle="dropdown" aria-expanded="false">CATEGORIES</button>
+                        <button data-bs-toggle="dropdown"
+                                type="button"
+                                aria-expanded="false"
+                                @class([
+                                    'cus-link cus-link-button dropdown-toggle',
+                                    'active' => false,
+                                ])>CATEGORIES</button>
 
                         <ul class="dropdown-menu dropdown-cus">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            @foreach ($categoryList as $category)
+                                <li><a class="dropdown-item" href="{{ route('user.item.info', ['c' => $category->id]) }}"
+                                      >{{ $category->name }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="nav-item nav-space-last">
-                        <a  @class(['cus-link', 'active' => request()->routeIs('contacts')])
-                           href="{{ route('contacts') }}">CONTACT</a>
+                        <a href="{{ route('contacts') }}"
+                           @class(['cus-link', 'active' => request()->routeIs('contacts')])>CONTACT</a>
                     </li>
                     <li class="nav-item nav-space-searchbar">
                         <form class="d-flex pad_for_s_bar"
@@ -90,11 +98,13 @@
                                 <ul class="dropdown-menu dropdown-cus">
                                     <li>
                                         <a class="dropdown-item"
-                                           href="{{ route('user.item.inventory') }}">Inventory</a></li>
+                                           href="{{ route('user.item.inventory') }}">Inventory</a>
+                                    </li>
                                     <li>
                                     <li>
                                         <a class="dropdown-item"
-                                           href="{{ route('user.item.create') }}">Register New Item</a></li>
+                                           href="{{ route('user.item.create') }}">Register New Item</a>
+                                    </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
