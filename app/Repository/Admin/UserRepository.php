@@ -26,18 +26,10 @@ class UserRepository
     }
 
     public function store(Request $request)
-    {
-        DB::beginTransaction();
-        try {
-            $data = array_merge($request->only(['user_name', 'full_name', 'email', 'phone_number', 'address']), ['password' => bcrypt($request->password)]);
-            $role = Role::findOrFail($request->role);
-            $user = User::create($data);
-            $user->assignRole($role);
-            DB::commit();
-        } catch (Throwable $e) {
-            DB::rollBack();
-            Log::error($e->getMessage());
-        }
-        return to_route('entry-register');
+    {   
+        $data = array_merge($request->only(['user_name', 'full_name', 'email', 'phone_number', 'address']), ['password' => bcrypt($request->password)]);
+        $role = Role::findOrFail($request->role);
+        $user = User::create($data);
+        $user->assignRole($role);
     }
 }
