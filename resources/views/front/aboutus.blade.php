@@ -7,7 +7,7 @@
                     About
                 </span><br><br>
                 <span class="about-us-description">
-                    At Heritage Auctions, we are more than just an online marketplace; we are custodians of history,
+                    At Timeless Treasuria Auctions, we are more than just an online marketplace; we are custodians of history,
                     storytellers of bygone eras, and passionate advocates for the enduring beauty of antiques.
                     With a deep appreciation for the craftsmanship and narratives embedded in each artifact,
                     we have curated a platform where enthusiasts, collectors, and connoisseurs converge to celebrate the

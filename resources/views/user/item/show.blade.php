@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-8 col-12">
                 <h2 class="item-title-detail">
-                    Schitterend stadsgezicht met personen
+                    {{ $item->name }}
                 </h2>
                 <img class="item-detail-img img-fluid"
                      src="{{ asset('storage/antique/' . $item->image->file_name) }}"
@@ -31,7 +31,7 @@
                         <span class="bid-font1">CURRENT BID</span>
                         <h1 class="bid-font2"
                             id="current-bid-amount">
-                            {{ $currentBid?->bid_amount ? number_format($currentBid->bid_amount ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' : 'No current bids' }}
+                            {{ $currentBid?->bid_amount ? number_format($currentBid->bid_amount ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' : 'No current bid' }}
                         </h1>
                         <div class="@if ($item->user_id === auth()->user()->id || $item->auction?->status === 2) d-none @endif"
                              id="bid-container">
@@ -77,7 +77,7 @@
                                 @empty
                                     <tr>
                                         <td colspan="100%">
-                                            No current bids.
+                                            No bid has been given.
                                         </td>
                                     </tr>
                                 @endforelse
@@ -119,6 +119,7 @@
             </div>
         </div>
     </div>
+    <br><br>
 @endsection
 
 @section('script')

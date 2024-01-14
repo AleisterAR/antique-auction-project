@@ -5,7 +5,7 @@
         <div class="row">
             @forelse ($items as $item)
                 <a class="col-lg-3 d-block col-md-6 mb-4 col-12 cus-card-link-decoration"
-                   href="{{ route('user.item.show', $item->id) }}">
+                   href="{{ route('user.item.show', ['id' => $item->id]) }}">
                     <div class="card cus-card">
                         <img class="card-img-top cus-card"
                              src="{{ asset('storage/antique/' . $item->image->file_name) }}"

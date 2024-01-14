@@ -15,21 +15,25 @@
                 <ul>
                     <h4>get support</h4>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">account</a></li>
-                    <li><a href="#">payment methods</a></li>
-                    <li><a href="#">refunds</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Payment methods</a></li>
+                    <li><a href="#">Refunds</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <ul>
-                    <h4>contact</h4>
+                    <h4>Contact</h4>
                     <li><a href="#">Contact us</a></li>
-                    <li><a href="#">live chat</a></li>
+                    <li><a href="#">Live Chat</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <ul>
-                    <h4>follow us</h4>
+                    <h4>Help</h4>
+                    <li><a href="#">Buyer Tips</a></li>
+                    <li><a href="#">Buyer Terms</a></li>
+                    <li><a href="#">Seller Tips</a></li>
+                    <li><a href="#">Seller Terms</a></li>
                 </ul>
             </div>
         </div>
