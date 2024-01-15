@@ -16,7 +16,7 @@
                                name="name"
                                type="text"
                                placeholder="Item Name"
-                               required>
+                               >
                     </div>
                     <div class="mb-3">
                         <input class = "form-cus"
@@ -36,8 +36,9 @@
                         <select class="form-select-cus"
                                 name="category_id"
                                 aria-label="Default select example">
+                                <option value="" disabled selected>Select a category</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option class="role-option" value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -46,7 +47,7 @@
                                id="condition"
                                name="condition"
                                type="text"
-                               placeholder="Condition">
+                               placeholder="Condition" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label"
@@ -54,7 +55,7 @@
                         <input class="form-cus"
                                id="photo"
                                name="antique"
-                               type="file">
+                               type="file" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label"
@@ -62,7 +63,7 @@
                         <input class="form-cus"
                                id="certificate"
                                name="certificate"
-                               type="file">
+                               type="file" required>
                     </div>
                     <div class="mb-3">
                         <textarea class = "form-cus textarea-size"

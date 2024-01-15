@@ -18,7 +18,7 @@
                             <input class="form-cus"
                                    name="user_name"
                                    type="text"
-                                   placeholder="Username">
+                                   placeholder="Username" required>
                             @error('user_name')
                             <span class="text-sm text-danger">{{ $message }}</span>
                             @enderror
@@ -26,8 +26,8 @@
                         <div class="mb-3">
                             <input class = "form-cus"
                                    name="email"
-                                   type="text"
-                                   placeholder="Email">
+                                   type="email"
+                                   placeholder="Email" required>
                             @error('email')
                             <span class="text-sm text-danger">{{ $message }}</span>
                             @enderror
@@ -35,7 +35,7 @@
                         <div class="mb-3">
                             <input class = "form-cus"
                                    name="password"
-                                   type="text"
+                                   type="password"
                                    placeholder="Password">
                             @error('password')
                             <span class="text-sm text-danger">{{ $message }}</span>
@@ -44,18 +44,19 @@
                         <div class="mb-3">
                             <input class="form-cus"
                                    name="password_confirmation"
-                                   type="text"
+                                   type="password"
                                    placeholder="Confirm Password">
                             @error('password_confirmation')
                             <span class="text-sm text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <select class="form-select-cus role-option"
+                            <select class="form-select-cus"
                                     name="role"
                                     aria-label="Default select example">
+                                <option value="" disabled selected>Select a role</option>
                                 @foreach ($roles as $role)
-                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                    <option class="role-option" value="{{ $role->id }}">{{ $role->name }}</option>
                                 @endforeach
                             </select>
                             @error('role')

@@ -29,7 +29,7 @@
                                     <td><a href="{{ route('user.item.show', $item->id )}}">{{ $item->name }}</a></td>
                                     <td>{{ $item->provenance->creator }}</td>
                                     <td>{{ $item->provenance->year }}</td>
-                                    <td>{{ $item->category->name }}</td>
+                                    <td class="role-option">{{ $item->category->name }}</td>
                                     <td>{{ $item->condition }}</td>
                                     <td><a href="{{ asset('storage/antique/' . $item->image->file_name) }}"
                                            target="_blank">
@@ -63,5 +63,6 @@
                 </div>
             </div>
         </div>
+        <br><br>
     </main>
 @endsection
