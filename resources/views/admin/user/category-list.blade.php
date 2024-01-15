@@ -23,6 +23,12 @@
                                 @foreach ($categories as $category)
                                     <tr>
                                         <td>{{ $category->name }}</td>
+                                        <td>
+                                            <form action="">
+                                                <button class="btn btn-theme"
+                                                        type="submit">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -33,14 +33,12 @@
                                         <td>{{ $user->phone_number }}</td>
                                         <td>{{ $user->address }}</td>
                                         <td>{{ $user->roles->pluck('name')->implode(',') }}</td>
-                                        <td>
+                                        <td class="d-flex gap-1">
+                                            <a class="btn btn-theme"
+                                               href="">Update</a>
                                             <form action="">
-                                                <button class="btn btn-danger btn-sm">
-                                                    <i class="bi bi-trash text-white"></i>
-                                                </button>
-                                                <button class="btn btn-sm btn-warning">
-                                                        <i class="bi bi-file-earmark text-white"></i>
-                                                </button>
+                                                <button class="btn btn-theme"
+                                                        type="submit">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

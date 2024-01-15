@@ -15,12 +15,11 @@
                     <table class="table table-bordered" id="datatablesSimple">
                         <thead>
                         <tr>
-                            <th>Antique Name</th>
+                            <th>Item Name</th>
                             <th>Start Time</th>
                             <th>End Time</th>
                             <th>Current Bid</th>
                             <th>Status</th>
-                            <th>Operation</th>
                         </tr>
                         </thead>
                         <tbody>
