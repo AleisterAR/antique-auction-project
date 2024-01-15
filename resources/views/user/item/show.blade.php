@@ -31,7 +31,7 @@
                         <span class="bid-font1">CURRENT BID</span>
                         <h1 class="bid-font2"
                             id="current-bid-amount">
-                            {{ $currentBid?->bid_amount ? number_format($currentBid->bid_amount ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' : 'No current bid' }}
+                            {{ $currentBid?->bid_amount ? number_format($currentBid->bid_amount ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' : 'No current bids' }}
                         </h1>
                         <div class="@if ($item->user_id === auth()->user()->id || $item->auction?->status === 2) d-none @endif"
                              id="bid-container">
@@ -77,7 +77,7 @@
                                 @empty
                                     <tr>
                                         <td colspan="100%">
-                                            No bid has been given.
+                                            No current bids.
                                         </td>
                                     </tr>
                                 @endforelse
@@ -94,7 +94,7 @@
                         <span class="item-detail-title">Name of Antique</span><br>
                         <span class="item-description">{{ $item->name }}</span><br><br>
                         <span class="item-detail-title">Category</span><br>
-                        <span class="item-description">{{ $item->category->name }}</span><br><br>
+                        <span class="item-description role-option">{{ $item->category->name }}</span><br><br>
                         <span class="item-detail-title">Condition</span><br>
                         <span class="item-description">{{ $item->condition }}</span><br><br>
                     </div>
@@ -119,7 +119,6 @@
             </div>
         </div>
     </div>
-    <br><br>
 @endsection
 
 @section('script')
