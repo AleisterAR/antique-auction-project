@@ -26,12 +26,11 @@ class ItemInfoController extends Controller
                         $query->whereIn('category_id', $categories);
                     });
             })->when($sort, function ($query, $sort) {
-                $query->leftJoin('auctions', 'items.id', '=', 'auctions.item_id')
+                $query->rightJoin('auctions', 'items.id', '=', 'auctions.item_id')
                     ->orderBy('auctions.initial_price', $sort);
             })->paginate(12);
 
         $items->appends(request()->query());
-
         return view('user.item.info', compact('items'));
     }
 }

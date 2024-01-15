@@ -26,7 +26,7 @@
                         <tbody>
                             @forelse ($items as $item)
                                 <tr>
-                                    <td> {{ $item->name }}</td>
+                                    <td><a href="{{ route('user.item.show', $item->id )}}">{{ $item->name }}</a></td>
                                     <td>{{ $item->provenance->creator }}</td>
                                     <td>{{ $item->provenance->year }}</td>
                                     <td>{{ $item->category->name }}</td>

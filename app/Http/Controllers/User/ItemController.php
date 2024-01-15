@@ -84,6 +84,7 @@ class ItemController extends Controller
     {
         $currentBid = null;
         $item = $this->itemRepository->findById($id);
+        $item->load('category');
         $currentBid = null;
         if ($item->auction()->exists()) {
             $currentBid = $this->bidRepository->currentBid($request->user()->id, $item->auction->id);

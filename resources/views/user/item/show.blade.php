@@ -94,7 +94,7 @@
                         <span class="item-detail-title">Name of Antique</span><br>
                         <span class="item-description">{{ $item->name }}</span><br><br>
                         <span class="item-detail-title">Category</span><br>
-                        <span class="item-description">Painting</span><br><br>
+                        <span class="item-description">{{ $item->category->name }}</span><br><br>
                         <span class="item-detail-title">Condition</span><br>
                         <span class="item-description">{{ $item->condition }}</span><br><br>
                     </div>
