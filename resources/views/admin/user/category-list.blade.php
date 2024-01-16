@@ -22,7 +22,7 @@
                             <tbody>
                                 @foreach ($categories as $category)
                                     <tr>
-                                        <td>{{ $category->name }}</td>
+                                        <td class="text-capitalize">{{ $category->name }}</td>
                                         <td>
                                             <form action="{{route('admin.category.destroy', $category->id)}}" method="POST">
                                                 @csrf

@@ -33,7 +33,7 @@
                                placeholder="Year Created">
                     </div>
                     <div class="mb-3">
-                        <select class="form-select-cus"
+                        <select class="form-select-cus text-capitalize"
                                 name="category_id"
                                 aria-label="Default select example">
                                 <option value="" disabled selected>Select a category</option>

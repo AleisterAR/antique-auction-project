@@ -21,7 +21,6 @@
                                 <th>Phone Number</th>
                                 <th>Address</th>
                                 <th>Role</th>
-                                <th>Operation</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -33,14 +32,6 @@
                                         <td>{{ $user->phone_number }}</td>
                                         <td>{{ $user->address }}</td>
                                         <td>{{ $user->roles->pluck('name')->implode(',') }}</td>
-                                        <td class="d-flex gap-1">
-                                            <a class="btn btn-theme"
-                                               href="">Update</a>
-                                            <form action="">
-                                                <button class="btn btn-theme"
-                                                        type="submit">Delete</button>
-                                            </form>
-                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

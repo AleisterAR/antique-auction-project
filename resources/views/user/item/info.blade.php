@@ -5,7 +5,7 @@
         <div class="row">
             @forelse ($items as $item)
                 <a class="col-lg-3 d-block col-md-6 mb-4 col-12 cus-card-link-decoration"
-                   href="{{ route('user.item.show', ['id' => $item->id]) }}">
+                   href="{{ route('user.item.show', $item->id) }}">
                     <div class="card cus-card">
                         <img class="card-img-top cus-card"
                              src="{{ asset('storage/antique/' . $item->image->file_name) }}"
@@ -16,7 +16,7 @@
                                 <p>No auction</p>
                             @else
                                 <p class="card-text cus-card-current-bid">
-                                    @if ($item->auction->end_time <= now())
+                                    @if ($item->auction?->end_time <= now())
                                         Highest Bid <br>
                                     @else
                                         Current Bid <br>
@@ -25,7 +25,7 @@
                                           class="card-text cus-card-bid-amount">{{ $item->auction?->currentBid?->bid_amount ? '€ ' . $item->auction->currentBid->bid_amount : '-' }}</span>
                                 </p>
                                 <p class="card-text cus-card-timer">
-                                    @if ($item->auction->end_time <= now())
+                                    @if ($item->auction?->end_time <= now())
                                         Auction Ended
                                     @else
                                         {{ $item->auction?->end_time ? now()->diffInDays($item->auction->end_time) . ' days left' : '-' }}

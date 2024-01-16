@@ -31,7 +31,7 @@
                         <span class="bid-font1">CURRENT BID</span>
                         <h1 class="bid-font2"
                             id="current-bid-amount">
-                            {{ $currentBid?->bid_amount ? number_format($currentBid->bid_amount ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' : 'No current bids' }}
+                            {{ $currentBid?->bid_amount ? number_format($currentBid->bid_amount ?? 0, $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' : 'No current bid' }}
                         </h1>
                         <div class="@if ($item->user_id === auth()->user()->id || $item->auction?->status === 2) d-none @endif"
                              id="bid-container">
@@ -41,7 +41,7 @@
                                    type="text"
                                    aria-label="bid"
                                    aria-describedby="ba2"
-                                   placeholder="{{ number_format($item->auction?->topFiveBids->first()['bid_amount'] ?? ($item->auction->initial_price ?? 0), $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' }} or higher">
+                                   placeholder="Higher than {{ number_format($item->auction?->topFiveBids->first()['bid_amount'] ?? ($item->auction->initial_price ?? 0), $decimals = 0, $decimalSeparator = '.', $thousandsSeparator = ',') . ' €' }}">
                             <button class="btn btn-danger d-flex align-items-center py-3 px-4 mt-3 "
                                     id="place-bid"
                                     type="button"
@@ -77,7 +77,7 @@
                                 @empty
                                     <tr>
                                         <td colspan="100%">
-                                            No current bids.
+                                            No bid history
                                         </td>
                                     </tr>
                                 @endforelse
@@ -89,6 +89,7 @@
         </div>
         <div class="row">
             <div class="col-md-8 col-12">
+                <br>
                 <div class="row">
                     <div class="col-md-6">
                         <span class="item-detail-title">Name of Antique</span><br>
@@ -119,6 +120,7 @@
             </div>
         </div>
     </div>
+    <br><br>
 @endsection
 
 @section('script')
