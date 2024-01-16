@@ -17,4 +17,10 @@ class CategoryController extends Controller
         Category::create(['name' => $name]);
         return redirect()->back();
     }
+
+    public function destroy($id)
+    {
+        Category::findOrFail($id)->delete();
+        return back();
+    }
 }

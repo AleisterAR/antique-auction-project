@@ -22,6 +22,7 @@ Route::prefix('/admin')->group(function () {
         Route::get('/user/auction', \App\Http\Controllers\Admin\AuctionController::class)->name('admin.user.auction');
         Route::get('/user/category-list', \App\Http\Controllers\Admin\CategoryListController::class)->name('admin.user.category-list');
         Route::get('/user/user-list', \App\Http\Controllers\Admin\UserListController::class)->name('admin.user.user-list');
+        Route::delete('/category/{id}/delete', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
     });
 
     Route::group(['middleware' => ['role:expert']], function () {

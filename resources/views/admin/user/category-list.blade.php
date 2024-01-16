@@ -24,7 +24,9 @@
                                     <tr>
                                         <td>{{ $category->name }}</td>
                                         <td>
-                                            <form action="">
+                                            <form action="{{route('admin.category.destroy', $category->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
                                                 <button class="btn btn-theme"
                                                         type="submit">Delete</button>
                                             </form>
