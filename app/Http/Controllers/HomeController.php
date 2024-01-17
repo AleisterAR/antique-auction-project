@@ -10,7 +10,14 @@ class HomeController extends Controller
 {
     public function __invoke()
     {   
-        $items = Item::with(['category', 'auction.currentBid', 'image'])->latest()->limit(4)->get();
+        $items = Item::has('auction')
+        ->with(['category', 'auction.currentBid', 'image'])
+        ->whereHas('auction', function($query) {
+            $query->where('auctions.start_time', '<', now());
+        })
+        ->latest()
+        ->limit(4)
+        ->get();
         return view('front.home', compact('items'));
     }
 }

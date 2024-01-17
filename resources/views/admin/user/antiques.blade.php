@@ -49,12 +49,12 @@
                                             <form action="{{ route('admin.item.update.status', ['id'=> $item->id]) }}" method="POST">
                                                 @csrf
                                                 @method('PATCH')
-                                                @if ((int)$item->status === 1)
+                                                @if ((int)$item->status === 0)
                                                     <button value="{{ (int)!$item->status }}" name="status">
                                                         <i class="bi bi-bookmark-check-fill text-success"></i>
                                                     </button>
                                                 @else
-                                                    <button value="{{ (int)!$item->status }}" name="status">
+                                                    <button @disabled(!(is_null($item->auction) || $item->auction->start_time > now())) value="{{ (int)!$item->status }}" name="status">
                                                         <i class="bi bi-bookmark-x-fill text-danger"></i>
                                                     </button>
                                                 @endif

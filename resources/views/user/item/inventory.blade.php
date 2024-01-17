@@ -26,7 +26,7 @@
                         <tbody>
                             @forelse ($items as $item)
                                 <tr>
-                                    <td><a href="{{ route('user.item.show', $item->id )}}">{{ $item->name }}</a></td>
+                                    <td><a href="{{ route('user.item.show', $item->id) }}">{{ $item->name }}</a></td>
                                     <td>{{ $item->provenance->creator }}</td>
                                     <td>{{ $item->provenance->year }}</td>
                                     <td class="role-option">{{ $item->category->name }}</td>
@@ -52,7 +52,8 @@
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-theme"
-                                                    type="submit">Delete</button>
+                                                    type="submit"
+                                                    @disabled(!(is_null($item->auction) || $item->auction->start_time > now()))>Delete</button>
                                         </form>
                                     </td>
                                 </tr>

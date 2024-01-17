@@ -9,7 +9,7 @@ use Spatie\Permission\Models\Role;
 class HomeController extends Controller
 {
     public function __invoke()
-    {
+    {   
         $items = Item::with(['images', 'provenance.images'])->get();
         return view('admin.index', compact('items'));
     }
