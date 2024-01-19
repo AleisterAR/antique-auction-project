@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminUserCreateRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Repository\Admin\RoleRepository;
 use App\Repository\Admin\UserRepository;
 
@@ -32,7 +34,7 @@ class UserController extends Controller
         return view('admin.user.create', compact('roles'));
     }
 
-    public function store(Request $request)
+    public function store(AdminUserCreateRequest $request)
     {   
         DB::beginTransaction();
         try {
