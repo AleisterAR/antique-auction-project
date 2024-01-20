@@ -6,11 +6,13 @@ use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\EntryRegisterController;
+use App\Http\Controllers\AuthController;
 
 Route::prefix('/admin')->group(function () {
     Route::group(['middleware' => ['role:admin|expert']], function () {
         Route::get('/', HomeController::class)->name('admin.index');
         Route::delete('/item/{id}/delete', [ItemController::class, 'destroy'])->name('admin.item.destroy');
+        Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
     });
 
     Route::group(['middleware' => ['role:admin']], function () {
