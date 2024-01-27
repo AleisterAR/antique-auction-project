@@ -152,7 +152,7 @@ if ($auctionId) {
                     return Swal.fire({
                         icon: "warning",
                         title: "Oops...",
-                        text: "Your bid must exceed the initial price and current bid by at least $50",
+                        text: errors['bid_amount'][0]
                     });
                 }
             }

@@ -38,7 +38,7 @@ class BidRule implements ValidationRule, DataAwareRule
             ->toArray();
 
         if (empty($bid)) {
-            if ($value  < $auction->initial_price) {
+            if ($value  <= $auction->initial_price) {
                 $fail('Your bid must be greater than initial price');
             }
         }
